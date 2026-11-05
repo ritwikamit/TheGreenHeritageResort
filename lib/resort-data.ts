@@ -416,6 +416,14 @@ export const INITIAL_FACILITY_ITEMS: FacilityVerificationItem[] = [
 
 export const SUPPLIED_CHANNELS: DirectoryChannel[] = [
   {
+    id: 'email',
+    platform: 'Official Email',
+    handleOrLabel: 'ajay888277@gmail.com',
+    url: 'mailto:ajay888277@gmail.com',
+    category: 'Review & Directory',
+    verificationNote: 'Direct email for bookings, wedding queries, and reservations.',
+  },
+  {
     id: 'google-maps',
     platform: 'Google Maps',
     handleOrLabel: 'Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur',

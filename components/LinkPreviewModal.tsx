@@ -5,7 +5,7 @@ import Image from 'next/image';
 import {
   ShareCustomIcon,
   LinkCustomIcon,
-  WhatsAppBrandIcon,
+  WhatsAppCustomIcon,
   CloseCustomIcon,
   VerifiedCheckCustomIcon,
 } from './CustomHeritageIcons';
@@ -194,7 +194,7 @@ export default function LinkPreviewModal({ isOpen, onClose }: LinkPreviewModalPr
             rel="noopener noreferrer"
             className="flex-1 py-3 px-4 rounded-full bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-98 transition-all cursor-pointer"
           >
-            <WhatsAppBrandIcon className="w-4 h-4 text-white" />
+            <WhatsAppCustomIcon className="w-4 h-4 text-white" />
             <span>Share via WhatsApp</span>
           </a>
 

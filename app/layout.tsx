@@ -103,6 +103,7 @@ const jsonLd = {
       description:
         'Wedding resort, indoor chandelier banquet hall, outdoor celebration lawn, and family stay property in Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur, Bihar 844127.',
       url: 'https://thegreenheritageresort.in',
+      email: 'ajay888277@gmail.com',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Bakarpur, Gobarsahi–Sakri Road',

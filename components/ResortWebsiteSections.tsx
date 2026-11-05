@@ -24,6 +24,7 @@ import {
   MapPinCustomIcon,
   ParkingCarIcon,
   PhoneCallCustomIcon,
+  MailCustomIcon,
   PoolWavesIcon,
   TripadvisorBrandIcon,
   WeddingRingsIcon,
@@ -1546,6 +1547,15 @@ export default function ResortWebsiteSections({
                   Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur, Bihar 844127. Reach out
                   to our team to plan your wedding, reception, or family stay.
                 </p>
+                <div className="flex items-center justify-center sm:justify-start gap-2 pt-1 text-xs sm:text-sm text-[#FFECCB]/90">
+                  <MailCustomIcon className="w-4 h-4 text-[#FFA97B] shrink-0" />
+                  <a
+                    href="mailto:ajay888277@gmail.com"
+                    className="hover:text-[#FFA97B] underline underline-offset-4 decoration-[#FFA97B]/50 transition-colors"
+                  >
+                    ajay888277@gmail.com
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -1681,6 +1691,15 @@ export default function ResortWebsiteSections({
                   className="w-10 h-10 rounded-full clay-dark-pill flex items-center justify-center transition-all"
                 >
                   <WhatsAppCustomIcon className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="mailto:ajay888277@gmail.com"
+                  aria-label="Email Resort (ajay888277@gmail.com)"
+                  title="Email: ajay888277@gmail.com"
+                  className="w-10 h-10 rounded-full clay-dark-pill flex items-center justify-center transition-all text-[#FFECCB] hover:text-[#FFA97B]"
+                >
+                  <MailCustomIcon className="w-4 h-4" />
                 </a>
 
                 {onOpenShare && (
