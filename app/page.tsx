@@ -7,10 +7,12 @@ import LoadingScreen from '@/components/LoadingScreen';
 import MobileBottomQuickBar from '@/components/MobileBottomQuickBar';
 import ScrollTrailUpButton from '@/components/ScrollTrailUpButton';
 import CookieConsentBanner from '@/components/CookieConsentBanner';
+import LinkPreviewModal from '@/components/LinkPreviewModal';
 
 export default function HomePage() {
   const [activePage, setActivePage] = useState<ActivePageView>('home');
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
   const [enquiryDefaultType, setEnquiryDefaultType] = useState('Wedding / Reception');
   const [navVisible, setNavVisible] = useState(true);
 
@@ -126,6 +128,7 @@ export default function HomePage() {
         activePage={activePage}
         onNavigate={handleNavigate}
         onOpenEnquiry={handleOpenEnquiry}
+        onOpenShare={() => setIsShareModalOpen(true)}
         isEnquiryModalOpen={isEnquiryModalOpen}
         navVisible={navVisible}
       />
@@ -137,6 +140,7 @@ export default function HomePage() {
         enquiryDefaultType={enquiryDefaultType}
         onOpenEnquiry={handleOpenEnquiry}
         onCloseEnquiry={() => setIsEnquiryModalOpen(false)}
+        onOpenShare={() => setIsShareModalOpen(true)}
       />
 
       <MobileBottomQuickBar
@@ -149,6 +153,11 @@ export default function HomePage() {
       <ScrollTrailUpButton />
 
       <CookieConsentBanner onOpenPolicy={handleNavigate} />
+
+      <LinkPreviewModal
+        isOpen={isShareModalOpen}
+        onClose={() => setIsShareModalOpen(false)}
+      />
     </main>
   );
 }

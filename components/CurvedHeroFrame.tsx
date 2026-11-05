@@ -10,6 +10,7 @@ import {
   MapPinCustomIcon,
   PhoneCallCustomIcon,
   WeddingRingsIcon,
+  ShareCustomIcon,
 } from './CustomHeritageIcons';
 
 export type ActivePageView =
@@ -27,6 +28,7 @@ interface CurvedHeroFrameProps {
   activePage: ActivePageView;
   onNavigate: (page: ActivePageView) => void;
   onOpenEnquiry: (defaultCategory?: string) => void;
+  onOpenShare?: () => void;
   isEnquiryModalOpen?: boolean;
   navVisible?: boolean;
 }
@@ -46,6 +48,7 @@ export default function CurvedHeroFrame({
   activePage,
   onNavigate,
   onOpenEnquiry,
+  onOpenShare,
   isEnquiryModalOpen = false,
   navVisible = true,
 }: CurvedHeroFrameProps) {
@@ -373,8 +376,19 @@ export default function CurvedHeroFrame({
             </div>
           </nav>
 
-          {/* Right: Claymorphic Call & Enquire Now Buttons */}
-          <div className="flex items-center gap-2 lg:gap-2.5 shrink-0">
+          {/* Right: Claymorphic Call, Share & Enquire Now Buttons */}
+          <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-2.5 shrink-0">
+            {onOpenShare && (
+              <button
+                type="button"
+                onClick={onOpenShare}
+                aria-label="Share Resort & View Link Preview"
+                title="Share & Link Preview"
+                className="w-9 h-9 lg:w-10 lg:h-10 rounded-full clay-white-header flex items-center justify-center text-[#1E261A] hover:text-[#3B543F] hover:scale-105 active:scale-95 transition-all cursor-pointer"
+              >
+                <ShareCustomIcon className="w-4 h-4" />
+              </button>
+            )}
             <a
               href="tel:+919234052600"
               aria-label="Call The Green Heritage Resort and Banquet"

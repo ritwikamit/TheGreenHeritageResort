@@ -30,6 +30,8 @@ import {
   WeddingRingsIcon,
   WhatsAppCustomIcon,
   WifiSignalIcon,
+  ShareCustomIcon,
+  LinkCustomIcon,
 } from './CustomHeritageIcons';
 
 interface ResortWebsiteSectionsProps {
@@ -39,6 +41,7 @@ interface ResortWebsiteSectionsProps {
   enquiryDefaultType: string;
   onOpenEnquiry: (defaultCategory?: string) => void;
   onCloseEnquiry: () => void;
+  onOpenShare?: () => void;
 }
 
 const SECTION_ROTATING_WORDS = [
@@ -129,6 +132,7 @@ export default function ResortWebsiteSections({
   enquiryDefaultType,
   onOpenEnquiry,
   onCloseEnquiry,
+  onOpenShare,
 }: ResortWebsiteSectionsProps) {
   const [reelFilter, setReelFilter] = useState<'all' | 'landscape' | 'portrait'>('all');
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -1591,15 +1595,40 @@ export default function ResortWebsiteSections({
                 >
                   <WhatsAppCustomIcon className="w-4 h-4" />
                 </a>
+
+                {onOpenShare && (
+                  <button
+                    type="button"
+                    onClick={onOpenShare}
+                    aria-label="Share Resort & View Link Preview"
+                    title="Share & Link Preview"
+                    className="w-10 h-10 rounded-full clay-dark-pill flex items-center justify-center transition-all text-[#FCF9EA] hover:text-[#97A87A] cursor-pointer"
+                  >
+                    <ShareCustomIcon className="w-4 h-4" />
+                  </button>
+                )}
               </div>
 
-              <button
-                type="button"
-                onClick={() => onOpenEnquiry('Wedding / Reception')}
-                className="px-5 py-2.5 rounded-full text-xs font-semibold clay-btn-coral cursor-pointer"
-              >
-                Enquire for Dates
-              </button>
+              <div className="flex flex-col sm:flex-row items-center gap-2.5">
+                <button
+                  type="button"
+                  onClick={() => onOpenEnquiry('Wedding / Reception')}
+                  className="px-5 py-2.5 rounded-full text-xs font-semibold clay-btn-coral cursor-pointer"
+                >
+                  Enquire for Dates
+                </button>
+
+                {onOpenShare && (
+                  <button
+                    type="button"
+                    onClick={onOpenShare}
+                    className="px-4 py-2 rounded-full clay-white-header text-[#1E261A] text-xs font-semibold flex items-center gap-1.5 hover:text-[#3B543F] cursor-pointer transition-all"
+                  >
+                    <ShareCustomIcon className="w-3.5 h-3.5" />
+                    <span>Link Preview</span>
+                  </button>
+                )}
+              </div>
             </div>
           </div>
 

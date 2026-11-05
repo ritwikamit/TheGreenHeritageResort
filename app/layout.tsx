@@ -29,6 +29,7 @@ const parisienne = Parisienne({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://thegreenheritageresort.in'),
   title:
     'The Green Heritage Resort and Banquet | Weddings, Lawn & Stays in Muzaffarpur',
   description:
@@ -53,9 +54,19 @@ export const metadata: Metadata = {
       'The Green Heritage Resort and Banquet — Weddings & Celebrations in Muzaffarpur',
     description:
       'Where families come together for sacred vows, joyful receptions, and peaceful stays in Bakarpur, Muzaffarpur, Bihar.',
+    url: 'https://thegreenheritageresort.in',
     type: 'website',
     siteName: 'The Green Heritage Resort and Banquet',
     locale: 'en_IN',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'The Green Heritage Resort and Banquet — Weddings, Lawn & Stays in Muzaffarpur',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -63,6 +74,7 @@ export const metadata: Metadata = {
       'The Green Heritage Resort and Banquet | Weddings & Banquet in Muzaffarpur',
     description:
       'Explore real wedding reels, celebration lawns, banquet halls, and directions to The Green Heritage Resort and Banquet in Muzaffarpur, Bihar.',
+    images: ['/og-image.jpg'],
   },
   other: {
     'geo.region': 'IN-BR',
