@@ -1079,5 +1079,3 @@ export function RoyalLaurelIcon({
     </svg>
   );
 }
-
-export { WhatsAppCustomIcon as WhatsAppBrandIcon };
