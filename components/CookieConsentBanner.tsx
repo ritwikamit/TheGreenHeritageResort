@@ -38,9 +38,8 @@ export default function CookieConsentBanner({
   const savePreferences = (prefs: CookiePreferences) => {
     try {
       localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(prefs));
-      document.cookie = `gh_cookie_consent=${
-        prefs.analytics ? 'full' : 'essential'
-      }; path=/; max-age=31536000; SameSite=Lax`;
+      document.cookie = `gh_cookie_consent=${prefs.analytics ? 'full' : 'essential'
+        }; path=/; max-age=31536000; SameSite=Lax`;
     } catch {
       // ignore
     }
