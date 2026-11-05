@@ -37,7 +37,7 @@ export default function MobileBottomQuickBar({
         className={`flex-1 py-1.5 px-2 rounded-full text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-0.5 ${
           activePage === 'home'
             ? 'clay-pill-active font-semibold'
-            : 'text-[#1E261A]/80 hover:text-[#1E261A] font-medium'
+            : 'text-[#0F3B1A]/85 hover:text-[#0F3B1A] font-medium'
         }`}
       >
         <HomePalaceIcon className="w-3.5 h-3.5" />
@@ -51,7 +51,7 @@ export default function MobileBottomQuickBar({
         className={`flex-1 py-1.5 px-2 rounded-full text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-0.5 ${
           activePage === 'weddings'
             ? 'clay-pill-active font-semibold'
-            : 'text-[#1E261A]/80 hover:text-[#1E261A] font-medium'
+            : 'text-[#0F3B1A]/85 hover:text-[#0F3B1A] font-medium'
         }`}
       >
         <WeddingRingsIcon className="w-3.5 h-3.5" />
@@ -65,7 +65,7 @@ export default function MobileBottomQuickBar({
         className={`flex-1 py-1.5 px-2 rounded-full text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-0.5 ${
           activePage === 'gallery'
             ? 'clay-pill-active font-semibold'
-            : 'text-[#1E261A]/80 hover:text-[#1E261A] font-medium'
+            : 'text-[#0F3B1A]/85 hover:text-[#0F3B1A] font-medium'
         }`}
       >
         <GalleryReelIcon className="w-3.5 h-3.5" />

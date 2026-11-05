@@ -60,12 +60,12 @@ export default function LoadingScreen() {
       role="status"
       aria-live="polite"
       aria-busy={!isLoaded}
-      className={`fixed inset-0 w-screen h-[100dvh] z-[150] flex flex-col items-center justify-center p-6 bg-[#0E150D] text-[#FCF9EA] transition-opacity duration-500 ease-out select-none ${
+      className={`fixed inset-0 w-screen h-[100dvh] z-[150] flex flex-col items-center justify-center p-6 bg-[#0A1C0D] text-[#FFECCB] transition-opacity duration-500 ease-out select-none ${
         isLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
       {/* Background ambient glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,84,63,0.3)_0%,rgba(14,21,13,0.95)_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(159,237,114,0.18)_0%,rgba(10,28,13,0.96)_100%)] pointer-events-none" />
 
       {/* Center content */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-sm w-full space-y-6">
@@ -76,7 +76,7 @@ export default function LoadingScreen() {
             alt="The Green Heritage Resort and Banquet"
             fill
             priority
-            className="object-contain drop-shadow-[0_8px_24px_rgba(218,175,75,0.25)] animate-pulse"
+            className="object-contain drop-shadow-[0_8px_24px_rgba(218,175,75,0.35)] animate-pulse"
             sizes="180px"
           />
         </div>
@@ -86,26 +86,26 @@ export default function LoadingScreen() {
           <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-white">
             The Green Heritage
           </h2>
-          <p className="font-cursive text-xl sm:text-2xl text-[#E5C378]">
+          <p className="font-cursive text-xl sm:text-2xl text-[#D4AF37]">
             Resort &amp; Banquet
           </p>
-          <p className="text-[11px] sm:text-xs text-[#97A87A] font-medium tracking-wide">
+          <p className="text-[11px] sm:text-xs text-[#9FED72] font-medium tracking-wide">
             Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur, Bihar
           </p>
         </div>
 
         {/* Progress Bar Container */}
         <div className="w-full max-w-[260px] space-y-2">
-          <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden border border-[#D4AF37]/30">
+          <div className="h-2 w-full bg-[#061408] rounded-full overflow-hidden border border-[#9FED72]/30 p-0.5 shadow-[inset_2px_2px_4px_rgba(0,0,0,0.8),inset_-1px_-1px_3px_rgba(159,237,114,0.2)]">
             <div
-              className="h-full bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37] rounded-full transition-all duration-300 ease-out shadow-[0_0_12px_rgba(212,175,55,0.7)]"
+              className="h-full bg-gradient-to-r from-[#E00000] via-[#FFA97B] to-[#9FED72] rounded-full transition-all duration-300 ease-out shadow-[0_0_12px_rgba(224,0,0,0.65)]"
               style={{ width: `${progress}%` }}
             />
           </div>
 
-          <div className="flex items-center justify-between text-[10px] text-[#A8BBA3] font-medium px-0.5">
+          <div className="flex items-center justify-between text-[10px] text-[#FFECCB]/85 font-medium px-0.5">
             <span className="truncate max-w-[200px]">{getStatusText(progress)}</span>
-            <span className="text-[#D4AF37] font-semibold tabular-nums">{progress}%</span>
+            <span className="text-[#FFA97B] font-semibold tabular-nums">{progress}%</span>
           </div>
         </div>
       </div>

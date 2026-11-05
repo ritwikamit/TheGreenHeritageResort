@@ -94,7 +94,7 @@ export default function InstagramReelCard({
       ref={containerRef}
       onClick={handleCardClick}
       onMouseEnter={tryPlay}
-      className={`group relative overflow-hidden rounded-[26px] border-2 border-[#A8BBA3]/85 bg-[#1E261A] shadow-[0_12px_26px_rgba(30,38,26,0.18)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:border-[#FFA239] cursor-pointer ${
+      className={`group relative overflow-hidden rounded-[26px] border-2 border-[#9FED72]/30 bg-[#0A1C0D] shadow-[8px_8px_20px_rgba(197,160,114,0.35),-6px_-6px_16px_rgba(255,255,255,0.9)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:border-[#E00000] cursor-pointer ${
         isLandscape ? 'aspect-video w-full' : 'aspect-[9/16] w-full'
       } ${className}`}
     >
@@ -130,7 +130,7 @@ export default function InstagramReelCard({
       {/* Minimal footer: ONLY small details on left + Mute/Unmute button on right */}
       <div className="absolute inset-x-4 bottom-3.5 z-20 flex items-end justify-between gap-2.5">
         <div className="min-w-0 pointer-events-none">
-          <h4 className="font-serif text-[#FCF9EA] text-sm sm:text-base font-semibold leading-snug truncate drop-shadow-sm">
+          <h4 className="font-serif text-[#FFECCB] text-sm sm:text-base font-semibold leading-snug truncate drop-shadow-sm">
             {reel.title}
           </h4>
           <p className="text-white/85 text-[11px] sm:text-xs truncate">

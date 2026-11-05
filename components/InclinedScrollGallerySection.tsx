@@ -167,7 +167,7 @@ export default function InclinedScrollGallerySection({
           </p>
           <BlurRevealText
             as="h2"
-            className="font-serif text-3xl sm:text-5xl font-bold text-[#1E261A] tracking-tight"
+            className="font-serif text-3xl sm:text-5xl font-bold text-[#0F3B1A] tracking-tight"
           >
             Moments That Stay in Your Heart Forever
           </BlurRevealText>
@@ -264,10 +264,10 @@ export default function InclinedScrollGallerySection({
         </div>
 
         {/* BOTTOM MOVING TEXT RIBBON */}
-        <div className="w-full overflow-hidden bg-[#97A87A] py-2.5 border-y border-[#FCF9EA]/60 shadow-md">
+        <div className="w-full overflow-hidden bg-[#9FED72] py-2.5 border-y border-[#FFECCB]/80 shadow-md">
           <div
             ref={ribbonBottomRef}
-            className="flex whitespace-nowrap will-change-transform text-xs sm:text-sm font-semibold tracking-[0.22em] text-[#1E261A]"
+            className="flex whitespace-nowrap will-change-transform text-xs sm:text-sm font-semibold tracking-[0.22em] text-[#05260A]"
           >
             {Array.from({ length: 6 }).map((_, i) => (
               <span key={i} className="mx-2">

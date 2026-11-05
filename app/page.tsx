@@ -121,7 +121,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#FCF9EA] text-[#1E261A] relative overflow-x-clip">
+    <main className="min-h-screen bg-[#FFECCB] text-[#0F3B1A] relative overflow-x-clip">
       <LoadingScreen />
 
       <CurvedHeroFrame

@@ -53,19 +53,19 @@ export default function CookieConsentBanner({
     <div className="fixed bottom-16 sm:bottom-5 left-3 sm:left-6 z-50 max-w-md w-[calc(100vw-1.5rem)] clay-card p-4 sm:p-5">
       <div className="flex items-start gap-3">
         <div className="w-10 h-10 rounded-2xl clay-btn-soft flex items-center justify-center shrink-0">
-          <CookieShieldIcon className="w-5 h-5 text-[#97A87A]" />
+          <CookieShieldIcon className="w-5 h-5 text-[#0F3B1A]" />
         </div>
         <div className="min-w-0 flex-1">
-          <h4 className="font-serif font-bold text-[#1E261A] text-sm sm:text-base">
+          <h4 className="font-serif font-bold text-[#0F3B1A] text-sm sm:text-base">
             Cookie &amp; Privacy Preferences
           </h4>
-          <p className="mt-1 text-xs text-[#46563D] leading-relaxed">
+          <p className="mt-1 text-xs text-[#2C4631] leading-relaxed">
             We use essential cookies to remember your preferences and optional media
             cookies for smooth video playback. Read our{' '}
             <button
               type="button"
               onClick={() => onOpenPolicy('cookies')}
-              className="underline font-semibold text-[#5E7147] hover:text-[#1E261A] cursor-pointer"
+              className="underline font-semibold text-[#E00000] hover:text-[#0F3B1A] cursor-pointer"
             >
               Cookies Policy
             </button>
@@ -73,27 +73,27 @@ export default function CookieConsentBanner({
           </p>
 
           {customizeOpen && (
-            <div className="mt-3 space-y-2 pt-2 border-t border-[#A8BBA3]/45 text-xs">
-              <label className="flex items-center justify-between text-[#1E261A] font-medium">
+            <div className="mt-3 space-y-2 pt-2 border-t border-[#9FED72]/30 text-xs">
+              <label className="flex items-center justify-between text-[#0F3B1A] font-medium">
                 <span>Essential Site Cookies</span>
-                <input type="checkbox" checked disabled className="accent-[#FFA239]" />
+                <input type="checkbox" checked disabled className="accent-[#E00000]" />
               </label>
-              <label className="flex items-center justify-between text-[#1E261A] cursor-pointer">
+              <label className="flex items-center justify-between text-[#0F3B1A] cursor-pointer">
                 <span>Performance &amp; Reel Playback</span>
                 <input
                   type="checkbox"
                   checked={analytics}
                   onChange={(e) => setAnalytics(e.target.checked)}
-                  className="accent-[#FFA239]"
+                  className="accent-[#E00000]"
                 />
               </label>
-              <label className="flex items-center justify-between text-[#1E261A] cursor-pointer">
+              <label className="flex items-center justify-between text-[#0F3B1A] cursor-pointer">
                 <span>Social Embed Preferences</span>
                 <input
                   type="checkbox"
                   checked={marketing}
                   onChange={(e) => setMarketing(e.target.checked)}
-                  className="accent-[#FFA239]"
+                  className="accent-[#E00000]"
                 />
               </label>
             </div>
@@ -150,7 +150,7 @@ export default function CookieConsentBanner({
                   updatedAt: new Date().toISOString(),
                 })
               }
-              className="px-3 py-1.5 rounded-full text-xs font-medium text-[#46563D] hover:text-[#1E261A] cursor-pointer"
+              className="px-3 py-1.5 rounded-full text-xs font-medium text-[#2C4631] hover:text-[#0F3B1A] cursor-pointer"
             >
               Essential Only
             </button>

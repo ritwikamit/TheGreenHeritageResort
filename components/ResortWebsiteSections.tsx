@@ -252,13 +252,13 @@ export default function ResortWebsiteSections({
                     </p>
                     <BlurRevealText
                       as="h2"
-                      className="mt-2 font-serif text-3xl sm:text-5xl font-bold text-[#1E261A] tracking-tight leading-[1.12]"
+                      className="mt-2 font-serif text-3xl sm:text-5xl font-bold text-[#0F3B1A] tracking-tight leading-[1.12]"
                     >
                       When Two Hands Meet Under a Sky of Warm Lights
                     </BlurRevealText>
                   </div>
 
-                  <div className="space-y-4 text-sm sm:text-base md:text-lg text-[#46563D] leading-relaxed">
+                  <div className="space-y-4 text-sm sm:text-base md:text-lg text-[#2C4631] leading-relaxed">
                     <p>
                       There is a quiet, magical moment at every wedding—just before the
                       music swells—when the bride and groom walk side by side beneath a
@@ -269,7 +269,7 @@ export default function ResortWebsiteSections({
                       Parents stand with proud, tearful smiles. Elders raise their hands
                       in blessing. Cousins and childhood friends cheer from every side of
                       the walkway. At{' '}
-                      <strong className="text-[#1E261A]">
+                      <strong className="text-[#0F3B1A]">
                         The Green Heritage Resort and Banquet
                       </strong>
                       , we take care of every light, flower, and seat so your family can
@@ -280,13 +280,13 @@ export default function ResortWebsiteSections({
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
                     <div className="clay-surface rounded-2xl p-4 flex items-start gap-3">
                       <div className="w-9 h-9 rounded-xl clay-btn-soft flex items-center justify-center shrink-0 mt-0.5">
-                        <Heart className="w-4 h-4 text-[#D97706]" />
+                        <Heart className="w-4 h-4 text-[#E00000]" />
                       </div>
                       <div>
-                        <h3 className="font-serif font-bold text-base text-[#1E261A]">
+                        <h3 className="font-serif font-bold text-base text-[#0F3B1A]">
                           Made for Family Warmth
                         </h3>
-                        <p className="text-xs text-[#46563D] mt-0.5 leading-relaxed">
+                        <p className="text-xs text-[#2C4631] mt-0.5 leading-relaxed">
                           Spacious walkways, comfortable elders&apos; seating, and
                           peaceful rooms right on the grounds.
                         </p>
@@ -295,13 +295,13 @@ export default function ResortWebsiteSections({
 
                     <div className="clay-surface rounded-2xl p-4 flex items-start gap-3">
                       <div className="w-9 h-9 rounded-xl clay-btn-soft flex items-center justify-center shrink-0 mt-0.5">
-                        <Sparkles className="w-4 h-4 text-[#D97706]" />
+                        <Sparkles className="w-4 h-4 text-[#E00000]" />
                       </div>
                       <div>
-                        <h3 className="font-serif font-bold text-base text-[#1E261A]">
+                        <h3 className="font-serif font-bold text-base text-[#0F3B1A]">
                           Every Ritual Honoured
                         </h3>
-                        <p className="text-xs text-[#46563D] mt-0.5 leading-relaxed">
+                        <p className="text-xs text-[#2C4631] mt-0.5 leading-relaxed">
                           From sunlit Haldi mornings to grand evening receptions beneath
                           fairy lights and chandeliers.
                         </p>
@@ -341,19 +341,19 @@ export default function ResortWebsiteSections({
                 </p>
                 <BlurRevealText
                   as="h2"
-                  className="font-serif text-3xl sm:text-5xl font-bold text-[#1E261A] tracking-tight"
+                  className="font-serif text-3xl sm:text-5xl font-bold text-[#0F3B1A] tracking-tight"
                 >
                   <span>Spaces Made for </span>
                   <span className="inline-block min-w-[10.5ch] text-left align-bottom">
                     <span
                       key={wordIndex}
-                      className="inline-block text-[#D97706] animate-word-swap"
+                      className="inline-block text-[#E00000] animate-word-swap"
                     >
                       {SECTION_ROTATING_WORDS[wordIndex]}
                     </span>
                   </span>
                 </BlurRevealText>
-                <p className="mt-2.5 text-sm sm:text-base text-[#46563D] max-w-2xl leading-relaxed">
+                <p className="mt-2.5 text-sm sm:text-base text-[#2C4631] max-w-2xl leading-relaxed">
                   A wedding is more than an event—it is the day parents see their
                   dreams come true, friends dance till midnight, and relatives gather
                   from near and far. Our spaces give every ritual the warmth it
@@ -382,26 +382,26 @@ export default function ResortWebsiteSections({
               <div className="clay-card p-6 sm:p-7 flex flex-col justify-between transition-transform duration-300 hover:scale-[1.02]">
                 <div>
                   <div className="w-12 h-12 rounded-2xl clay-btn-soft flex items-center justify-center mb-4">
-                    <BanquetArchIcon className="w-6 h-6 text-[#5E7147]" />
+                    <BanquetArchIcon className="w-6 h-6 text-[#165A20]" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-[#1E261A]">
+                  <h3 className="font-serif text-2xl font-bold text-[#0F3B1A]">
                     The Royal Archway &amp; Open Green Lawn
                   </h3>
-                  <p className="mt-2.5 text-sm text-[#46563D] leading-relaxed">
+                  <p className="mt-2.5 text-sm text-[#2C4631] leading-relaxed">
                     Imagine the bride walking beneath glowing palace arches while cold
                     sparklers light up the night sky. Our wide green lawn gives your
                     baraat, varmala stage, and dinner guests plenty of open air to
                     celebrate comfortably.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#A8BBA3]/45 flex items-center justify-between">
-                  <span className="text-xs font-medium text-[#5E7147]">
+                <div className="mt-6 pt-4 border-t border-[#C5A072]/30 flex items-center justify-between">
+                  <span className="text-xs font-medium text-[#165A20]">
                     Open-Air Celebration Lawn
                   </span>
                   <button
                     type="button"
                     onClick={() => onOpenEnquiry('Outdoor Lawn Wedding')}
-                    className="text-xs font-semibold text-[#D97706] hover:underline cursor-pointer"
+                    className="text-xs font-semibold text-[#E00000] hover:underline cursor-pointer"
                   >
                     Ask About Dates →
                   </button>
@@ -411,26 +411,26 @@ export default function ResortWebsiteSections({
               <div className="clay-card p-6 sm:p-7 flex flex-col justify-between transition-transform duration-300 hover:scale-[1.02]">
                 <div>
                   <div className="w-12 h-12 rounded-2xl clay-btn-soft flex items-center justify-center mb-4">
-                    <WeddingRingsIcon className="w-6 h-6 text-[#5E7147]" />
+                    <WeddingRingsIcon className="w-6 h-6 text-[#165A20]" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-[#1E261A]">
+                  <h3 className="font-serif text-2xl font-bold text-[#0F3B1A]">
                     The Chandelier Banquet Hall
                   </h3>
-                  <p className="mt-2.5 text-sm text-[#46563D] leading-relaxed">
+                  <p className="mt-2.5 text-sm text-[#2C4631] leading-relaxed">
                     Step inside a warm, brightly lit banquet hall where crystal
                     chandeliers shine over your floral stage. Perfect for ring
                     ceremonies, sangeet dances, wedding receptions, and family
                     blessings in any weather.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#A8BBA3]/45 flex items-center justify-between">
-                  <span className="text-xs font-medium text-[#5E7147]">
+                <div className="mt-6 pt-4 border-t border-[#C5A072]/30 flex items-center justify-between">
+                  <span className="text-xs font-medium text-[#165A20]">
                     Indoor Banquet Hall
                   </span>
                   <button
                     type="button"
                     onClick={() => onOpenEnquiry('Banquet Hall Event')}
-                    className="text-xs font-semibold text-[#D97706] hover:underline cursor-pointer"
+                    className="text-xs font-semibold text-[#E00000] hover:underline cursor-pointer"
                   >
                     Ask About Dates →
                   </button>
@@ -440,25 +440,25 @@ export default function ResortWebsiteSections({
               <div className="clay-card p-6 sm:p-7 flex flex-col justify-between transition-transform duration-300 hover:scale-[1.02]">
                 <div>
                   <div className="w-12 h-12 rounded-2xl clay-btn-soft flex items-center justify-center mb-4">
-                    <PoolWavesIcon className="w-6 h-6 text-[#5E7147]" />
+                    <PoolWavesIcon className="w-6 h-6 text-[#165A20]" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-[#1E261A]">
+                  <h3 className="font-serif text-2xl font-bold text-[#0F3B1A]">
                     Sunlit Haldi Courtyard &amp; Family Stays
                   </h3>
-                  <p className="mt-2.5 text-sm text-[#46563D] leading-relaxed">
+                  <p className="mt-2.5 text-sm text-[#2C4631] leading-relaxed">
                     Fill your mornings with marigold petals, music, and haldi laughter
                     in our sunlit courtyard, while close family members rest peacefully
                     in our guest rooms right at the venue.
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#A8BBA3]/45 flex items-center justify-between">
-                  <span className="text-xs font-medium text-[#5E7147]">
+                <div className="mt-6 pt-4 border-t border-[#C5A072]/30 flex items-center justify-between">
+                  <span className="text-xs font-medium text-[#165A20]">
                     Haldi &amp; Guest Rooms
                   </span>
                   <button
                     type="button"
                     onClick={() => onOpenEnquiry('Room Stay / Haldi Function')}
-                    className="text-xs font-semibold text-[#D97706] hover:underline cursor-pointer"
+                    className="text-xs font-semibold text-[#E00000] hover:underline cursor-pointer"
                   >
                     Ask About Dates →
                   </button>
@@ -481,11 +481,11 @@ export default function ResortWebsiteSections({
                 </p>
                 <BlurRevealText
                   as="h2"
-                  className="font-serif text-3xl sm:text-5xl font-bold text-[#1E261A] tracking-tight"
+                  className="font-serif text-3xl sm:text-5xl font-bold text-[#0F3B1A] tracking-tight"
                 >
                   Watch Weddings Filmed at Our Resort
                 </BlurRevealText>
-                <p className="mt-2 text-sm sm:text-base text-[#46563D] max-w-2xl">
+                <p className="mt-2 text-sm sm:text-base text-[#2C4631] max-w-2xl">
                   Every video below is a real celebration hosted at The Green Heritage
                   in Muzaffarpur. Hover over any film to enlarge it or tap the speaker
                   icon to hear the celebration.
@@ -502,7 +502,7 @@ export default function ResortWebsiteSections({
 
             {/* 4 Landscape Reels */}
             <div>
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1E261A] mb-5">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#0F3B1A] mb-5">
                 Widescreen Wedding Films
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -515,13 +515,13 @@ export default function ResortWebsiteSections({
             {/* 4 Portrait Reels */}
             <div>
               <div className="flex items-center justify-between mb-5">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1E261A]">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#0F3B1A]">
                   Bridal Entries &amp; Stage Decor Reels
                 </h3>
                 <button
                   type="button"
                   onClick={() => onNavigate('gallery')}
-                  className="text-xs sm:text-sm font-semibold text-[#D97706] hover:underline cursor-pointer"
+                  className="text-xs sm:text-sm font-semibold text-[#E00000] hover:underline cursor-pointer"
                 >
                   See All Reels →
                 </button>
@@ -543,11 +543,11 @@ export default function ResortWebsiteSections({
                 </p>
                 <BlurRevealText
                   as="h2"
-                  className="font-serif text-3xl sm:text-5xl font-bold text-[#1E261A] tracking-tight"
+                  className="font-serif text-3xl sm:text-5xl font-bold text-[#0F3B1A] tracking-tight"
                 >
                   Celebration &amp; Stay Packages
                 </BlurRevealText>
-                <p className="mt-2 text-sm sm:text-base text-[#46563D] max-w-2xl leading-relaxed">
+                <p className="mt-2 text-sm sm:text-base text-[#2C4631] max-w-2xl leading-relaxed">
                   Every wedding has its own rituals, guest list, and schedule. Choose a
                   package style below and share your preferred dates so our team can
                   prepare a custom quotation for your family.
@@ -570,30 +570,30 @@ export default function ResortWebsiteSections({
                 >
                   <div>
                     <div className="flex items-center justify-between gap-3 mb-3">
-                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold clay-surface text-[#5E7147]">
-                        <Sparkles className="w-3.5 h-3.5 text-[#FFA239]" />
+                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold clay-surface text-[#165A20]">
+                        <Sparkles className="w-3.5 h-3.5 text-[#FFA97B]" />
                         {pkg.tag}
                       </span>
                       <div className="w-10 h-10 rounded-2xl clay-btn-soft flex items-center justify-center shrink-0">
-                        <Gift className="w-5 h-5 text-[#5E7147]" />
+                        <Gift className="w-5 h-5 text-[#165A20]" />
                       </div>
                     </div>
 
-                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#1E261A]">
+                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F3B1A]">
                       {pkg.title}
                     </h3>
-                    <p className="text-xs sm:text-sm font-semibold text-[#D97706] mt-1">
+                    <p className="text-xs sm:text-sm font-semibold text-[#E00000] mt-1">
                       {pkg.subtitle}
                     </p>
-                    <p className="mt-3 text-sm text-[#46563D] leading-relaxed">
+                    <p className="mt-3 text-sm text-[#2C4631] leading-relaxed">
                       {pkg.description}
                     </p>
 
-                    <ul className="mt-4 space-y-2 border-t border-[#A8BBA3]/40 pt-4">
+                    <ul className="mt-4 space-y-2 border-t border-[#C5A072]/30 pt-4">
                       {pkg.highlights.map((h) => (
                         <li
                           key={h}
-                          className="flex items-start gap-2.5 text-xs sm:text-sm text-[#1E261A]"
+                          className="flex items-start gap-2.5 text-xs sm:text-sm text-[#0F3B1A]"
                         >
                           <CheckCircle2 className="w-4 h-4 text-[#97A87A] shrink-0 mt-0.5" />
                           <span>{h}</span>
@@ -602,8 +602,8 @@ export default function ResortWebsiteSections({
                     </ul>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-[#A8BBA3]/40 flex flex-wrap items-center justify-between gap-3">
-                    <span className="text-xs text-[#46563D]">
+                  <div className="mt-6 pt-4 border-t border-[#C5A072]/30 flex flex-wrap items-center justify-between gap-3">
+                    <span className="text-xs text-[#2C4631]">
                       Custom quote based on date &amp; guests
                     </span>
                     <button
@@ -630,28 +630,28 @@ export default function ResortWebsiteSections({
                     </p>
                     <BlurRevealText
                       as="h2"
-                      className="font-serif text-3xl sm:text-4xl font-bold text-[#1E261A] tracking-tight"
+                      className="font-serif text-3xl sm:text-4xl font-bold text-[#0F3B1A] tracking-tight"
                     >
                       Easy to Reach for Every Guest
                     </BlurRevealText>
                   </div>
 
-                  <p className="text-sm sm:text-base text-[#46563D] leading-relaxed">
+                  <p className="text-sm sm:text-base text-[#2C4631] leading-relaxed">
                     We are located on{' '}
-                    <strong className="text-[#1E261A]">
+                    <strong className="text-[#0F3B1A]">
                       Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur, Bihar 844127
                     </strong>
                     . Bring your parents and family for a relaxed walkthrough of the
                     lawn, banquet hall, and rooms before you choose your dates.
                   </p>
 
-                  <div className="clay-surface rounded-2xl p-4 flex items-start gap-3 text-xs sm:text-sm text-[#1E261A]">
-                    <MapPinCustomIcon className="w-5 h-5 text-[#5E7147] shrink-0 mt-0.5" />
+                  <div className="clay-surface rounded-2xl p-4 flex items-start gap-3 text-xs sm:text-sm text-[#0F3B1A]">
+                    <MapPinCustomIcon className="w-5 h-5 text-[#165A20] shrink-0 mt-0.5" />
                     <div>
                       <span className="font-semibold block">
                         The Green Heritage Resort and Banquet
                       </span>
-                      <span className="text-[#46563D]">
+                      <span className="text-[#2C4631]">
                         Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur, Bihar 844127
                       </span>
                     </div>
@@ -704,7 +704,7 @@ export default function ResortWebsiteSections({
                 </p>
                 <BlurRevealText
                   as="h2"
-                  className="font-serif text-3xl sm:text-5xl font-bold text-[#1E261A] tracking-tight"
+                  className="font-serif text-3xl sm:text-5xl font-bold text-[#0F3B1A] tracking-tight"
                 >
                   Common Questions from Families
                 </BlurRevealText>
@@ -720,19 +720,19 @@ export default function ResortWebsiteSections({
                         onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
                         className="w-full px-6 py-4 text-left flex items-center justify-between gap-4 cursor-pointer"
                       >
-                        <span className="font-serif font-bold text-base sm:text-xl text-[#1E261A]">
+                        <span className="font-serif font-bold text-base sm:text-xl text-[#0F3B1A]">
                           {faq.question}
                         </span>
                         <span
                           className={`w-8 h-8 rounded-full clay-btn-soft flex items-center justify-center text-sm font-bold transition-transform duration-300 ${
-                            isOpen ? 'rotate-45 text-[#D97706]' : 'text-[#5E7147]'
+                            isOpen ? 'rotate-45 text-[#E00000]' : 'text-[#165A20]'
                           }`}
                         >
                           +
                         </span>
                       </button>
                       {isOpen && (
-                        <div className="px-6 pb-5 text-sm sm:text-base text-[#46563D] leading-relaxed border-t border-[#A8BBA3]/35 pt-3">
+                        <div className="px-6 pb-5 text-sm sm:text-base text-[#2C4631] leading-relaxed border-t border-[#C5A072]/30 pt-3">
                           {faq.answer}
                         </div>
                       )}
@@ -755,10 +755,10 @@ export default function ResortWebsiteSections({
               <p className="font-cursive text-3xl sm:text-4xl text-[#D4AF37]">
                 Heartfelt Celebrations in Muzaffarpur
               </p>
-              <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#1E261A] tracking-tight">
+              <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#0F3B1A] tracking-tight">
                 Weddings, Receptions &amp; Family Moments
               </h1>
-              <p className="mt-3 text-sm sm:text-base text-[#46563D] max-w-2xl leading-relaxed">
+              <p className="mt-3 text-sm sm:text-base text-[#2C4631] max-w-2xl leading-relaxed">
                 From grand bridal entries beneath our lit arches to open-air floral
                 mandaps and chandelier receptions, see how families celebrate their
                 most cherished days at The Green Heritage Resort and Banquet.
@@ -784,7 +784,7 @@ export default function ResortWebsiteSections({
 
           {/* Remaining Landscape Reels on Weddings Page */}
           <div className="space-y-4">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1E261A]">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F3B1A]">
               More Widescreen Wedding Films
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -796,7 +796,7 @@ export default function ResortWebsiteSections({
 
           {/* Remaining Portrait Reels on Weddings Page */}
           <div className="space-y-4">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1E261A]">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F3B1A]">
               Bridal Entries, Haldi &amp; Stage Decor Reels
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
@@ -818,10 +818,10 @@ export default function ResortWebsiteSections({
               <p className="font-cursive text-3xl sm:text-4xl text-[#D4AF37]">
                 Thoughtfully Crafted for Every Ritual
               </p>
-              <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#1E261A] tracking-tight">
+              <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#0F3B1A] tracking-tight">
                 Wedding, Event &amp; Stay Packages
               </h1>
-              <p className="mt-3 text-sm sm:text-base text-[#46563D] max-w-2xl leading-relaxed">
+              <p className="mt-3 text-sm sm:text-base text-[#2C4631] max-w-2xl leading-relaxed">
                 Whether you are planning a multi-day wedding with guest room stays or
                 an evening reception beneath our chandeliers, our team customizes every
                 package around your family&apos;s guest count, dates, and preferences.
@@ -844,30 +844,30 @@ export default function ResortWebsiteSections({
               >
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-3">
-                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold clay-surface text-[#5E7147]">
-                      <Sparkles className="w-3.5 h-3.5 text-[#FFA239]" />
+                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold clay-surface text-[#165A20]">
+                      <Sparkles className="w-3.5 h-3.5 text-[#FFA97B]" />
                       {pkg.tag}
                     </span>
                     <div className="w-10 h-10 rounded-2xl clay-btn-soft flex items-center justify-center shrink-0">
-                      <Gift className="w-5 h-5 text-[#5E7147]" />
+                      <Gift className="w-5 h-5 text-[#165A20]" />
                     </div>
                   </div>
 
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1E261A]">
+                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F3B1A]">
                     {pkg.title}
                   </h2>
-                  <p className="text-xs sm:text-sm font-semibold text-[#D97706] mt-1">
+                  <p className="text-xs sm:text-sm font-semibold text-[#E00000] mt-1">
                     {pkg.subtitle}
                   </p>
-                  <p className="mt-3 text-sm text-[#46563D] leading-relaxed">
+                  <p className="mt-3 text-sm text-[#2C4631] leading-relaxed">
                     {pkg.description}
                   </p>
 
-                  <ul className="mt-4 space-y-2 border-t border-[#A8BBA3]/40 pt-4">
+                  <ul className="mt-4 space-y-2 border-t border-[#C5A072]/30 pt-4">
                     {pkg.highlights.map((h) => (
                       <li
                         key={h}
-                        className="flex items-start gap-2.5 text-xs sm:text-sm text-[#1E261A]"
+                        className="flex items-start gap-2.5 text-xs sm:text-sm text-[#0F3B1A]"
                       >
                         <CheckCircle2 className="w-4 h-4 text-[#97A87A] shrink-0 mt-0.5" />
                         <span>{h}</span>
@@ -876,8 +876,8 @@ export default function ResortWebsiteSections({
                   </ul>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#A8BBA3]/40 flex flex-wrap items-center justify-between gap-3">
-                  <span className="text-xs text-[#46563D]">
+                <div className="mt-6 pt-4 border-t border-[#C5A072]/30 flex flex-wrap items-center justify-between gap-3">
+                  <span className="text-xs text-[#2C4631]">
                     Tailored to your event date &amp; guest count
                   </span>
                   <button
@@ -904,10 +904,10 @@ export default function ResortWebsiteSections({
               <p className="font-cursive text-3xl sm:text-4xl text-[#D4AF37]">
                 Complete Reel &amp; Photo Collection
               </p>
-              <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#1E261A] tracking-tight">
+              <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#0F3B1A] tracking-tight">
                 Wedding Reels &amp; Property Gallery
               </h1>
-              <p className="mt-2 text-sm text-[#46563D] max-w-xl">
+              <p className="mt-2 text-sm text-[#2C4631] max-w-xl">
                 Every clip plays automatically as you scroll and enlarges on hover.
                 Tap the speaker button on any video to listen to the celebration audio.
               </p>
@@ -922,7 +922,7 @@ export default function ResortWebsiteSections({
                   className={`px-4 py-1.5 rounded-full text-xs font-semibold capitalize transition-all cursor-pointer ${
                     reelFilter === tab
                       ? 'clay-pill-active'
-                      : 'text-[#46563D] hover:text-[#1E261A]'
+                      : 'text-[#2C4631] hover:text-[#0F3B1A]'
                   }`}
                 >
                   {tab === 'all'
@@ -937,7 +937,7 @@ export default function ResortWebsiteSections({
 
           {(reelFilter === 'all' || reelFilter === 'landscape') && (
             <div className="space-y-4">
-              <h2 className="font-serif text-2xl font-bold text-[#1E261A]">
+              <h2 className="font-serif text-2xl font-bold text-[#0F3B1A]">
                 Landscape Wedding &amp; Venue Reels
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -950,7 +950,7 @@ export default function ResortWebsiteSections({
 
           {(reelFilter === 'all' || reelFilter === 'portrait') && (
             <div className="space-y-4">
-              <h2 className="font-serif text-2xl font-bold text-[#1E261A]">
+              <h2 className="font-serif text-2xl font-bold text-[#0F3B1A]">
                 Portrait Bridal &amp; Celebration Reels
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
@@ -962,7 +962,7 @@ export default function ResortWebsiteSections({
           )}
 
           <div className="space-y-4">
-            <h2 className="font-serif text-2xl font-bold text-[#1E261A]">
+            <h2 className="font-serif text-2xl font-bold text-[#0F3B1A]">
               Property &amp; Celebration Photographs
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -978,7 +978,7 @@ export default function ResortWebsiteSections({
                   />
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                   <div className="absolute inset-x-4 bottom-3">
-                    <h4 className="font-serif text-[#FCF9EA] text-xs sm:text-sm font-semibold truncate">
+                    <h4 className="font-serif text-[#FFECCB] text-xs sm:text-sm font-semibold truncate">
                       {photo.title}
                     </h4>
                     <p className="text-white/85 text-[11px] truncate">
@@ -1002,10 +1002,10 @@ export default function ResortWebsiteSections({
               <p className="font-cursive text-3xl sm:text-4xl text-[#D4AF37]">
                 Comfort for Every Guest in Your Family
               </p>
-              <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#1E261A] tracking-tight">
+              <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#0F3B1A] tracking-tight">
                 Spaces, Guest Stays &amp; Amenities
               </h1>
-              <p className="mt-2 text-sm text-[#46563D] max-w-2xl leading-relaxed">
+              <p className="mt-2 text-sm text-[#2C4631] max-w-2xl leading-relaxed">
                 Because every wedding and family gathering is unique, please confirm
                 current room counts, package inclusions, and seasonal facilities
                 directly with our team when you enquire.
@@ -1029,30 +1029,30 @@ export default function ResortWebsiteSections({
                 <div>
                   <div className="w-11 h-11 rounded-2xl clay-btn-soft flex items-center justify-center mb-4">
                     {item.id === 'swimming-pool' ? (
-                      <PoolWavesIcon className="w-5 h-5 text-[#5E7147]" />
+                      <PoolWavesIcon className="w-5 h-5 text-[#165A20]" />
                     ) : item.id === 'parking' ? (
-                      <ParkingCarIcon className="w-5 h-5 text-[#5E7147]" />
+                      <ParkingCarIcon className="w-5 h-5 text-[#165A20]" />
                     ) : item.id === 'wifi' ? (
-                      <WifiSignalIcon className="w-5 h-5 text-[#5E7147]" />
+                      <WifiSignalIcon className="w-5 h-5 text-[#165A20]" />
                     ) : (
-                      <BanquetArchIcon className="w-5 h-5 text-[#5E7147]" />
+                      <BanquetArchIcon className="w-5 h-5 text-[#165A20]" />
                     )}
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-[#1E261A]">
+                  <h3 className="font-serif text-xl font-bold text-[#0F3B1A]">
                     {item.name}
                   </h3>
-                  <p className="mt-1 text-xs font-medium text-[#5E7147]">
+                  <p className="mt-1 text-xs font-medium text-[#165A20]">
                     {item.sourceNote}
                   </p>
-                  <p className="mt-3 text-sm text-[#46563D] leading-relaxed">
+                  <p className="mt-3 text-sm text-[#2C4631] leading-relaxed">
                     {item.publicNote}
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#A8BBA3]/40 flex items-center justify-between">
+                <div className="mt-5 pt-3 border-t border-[#C5A072]/30 flex items-center justify-between">
                   <button
                     type="button"
                     onClick={() => onOpenEnquiry(item.name)}
-                    className="text-xs font-semibold text-[#D97706] hover:underline cursor-pointer"
+                    className="text-xs font-semibold text-[#E00000] hover:underline cursor-pointer"
                   >
                     Ask About {item.name} →
                   </button>
@@ -1074,10 +1074,10 @@ export default function ResortWebsiteSections({
                 <p className="font-cursive text-3xl sm:text-4xl text-[#D4AF37]">
                   We Would Love to Welcome You
                 </p>
-                <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#1E261A] tracking-tight">
+                <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#0F3B1A] tracking-tight">
                   Location &amp; Direct Connect
                 </h1>
-                <p className="text-sm text-[#46563D] leading-relaxed">
+                <p className="text-sm text-[#2C4631] leading-relaxed">
                   Visit The Green Heritage Resort and Banquet at Bakarpur,
                   Gobarsahi–Sakri Road, Muzaffarpur, Bihar 844127, or open Google
                   Maps and our enquiry form below to plan your family visit.
@@ -1111,10 +1111,10 @@ export default function ResortWebsiteSections({
                       rel="noopener noreferrer"
                       className="clay-surface p-3.5 rounded-2xl hover:scale-[1.02] transition-transform block"
                     >
-                      <span className="font-serif font-bold text-sm text-[#1E261A] block">
+                      <span className="font-serif font-bold text-sm text-[#0F3B1A] block">
                         {ch.platform}
                       </span>
-                      <span className="text-xs text-[#5E7147] block truncate mt-0.5">
+                      <span className="text-xs text-[#165A20] block truncate mt-0.5">
                         {ch.handleOrLabel}
                       </span>
                     </a>
@@ -1145,12 +1145,12 @@ export default function ResortWebsiteSections({
         activePage === 'cookies') && (
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
           <div className="clay-card p-6 sm:p-10 space-y-6">
-            <div className="flex items-center justify-between gap-4 border-b border-[#A8BBA3]/45 pb-5">
+            <div className="flex items-center justify-between gap-4 border-b border-[#C5A072]/30 pb-5">
               <div>
                 <p className="font-cursive text-3xl text-[#D4AF37]">
                   The Green Heritage Resort and Banquet
                 </p>
-                <h1 className="font-serif text-2xl sm:text-4xl font-bold text-[#1E261A]">
+                <h1 className="font-serif text-2xl sm:text-4xl font-bold text-[#0F3B1A]">
                   {activePage === 'terms'
                     ? 'Terms & Conditions'
                     : activePage === 'privacy'
@@ -1168,14 +1168,14 @@ export default function ResortWebsiteSections({
             </div>
 
             {activePage === 'terms' && (
-              <div className="space-y-4 text-sm text-[#46563D] leading-relaxed">
+              <div className="space-y-4 text-sm text-[#2C4631] leading-relaxed">
                 <p>
                   Welcome to the website of{' '}
                   <strong>The Green Heritage Resort and Banquet</strong> (Bakarpur,
                   Gobarsahi–Sakri Road, Muzaffarpur, Bihar 844127). By using this
                   website, you agree to these simple terms:
                 </p>
-                <h3 className="font-serif font-bold text-lg text-[#1E261A]">
+                <h3 className="font-serif font-bold text-lg text-[#0F3B1A]">
                   1. Enquiries Are Requests Only
                 </h3>
                 <p>
@@ -1184,7 +1184,7 @@ export default function ResortWebsiteSections({
                   team confirms availability in writing and completes the booking
                   agreement with your family.
                 </p>
-                <h3 className="font-serif font-bold text-lg text-[#1E261A]">
+                <h3 className="font-serif font-bold text-lg text-[#0F3B1A]">
                   2. Packages, Rooms &amp; Event Rules
                 </h3>
                 <p>
@@ -1197,12 +1197,12 @@ export default function ResortWebsiteSections({
             )}
 
             {activePage === 'privacy' && (
-              <div className="space-y-4 text-sm text-[#46563D] leading-relaxed">
+              <div className="space-y-4 text-sm text-[#2C4631] leading-relaxed">
                 <p>
                   <strong>The Green Heritage Resort and Banquet</strong> respects your
                   family&apos;s privacy.
                 </p>
-                <h3 className="font-serif font-bold text-lg text-[#1E261A]">
+                <h3 className="font-serif font-bold text-lg text-[#0F3B1A]">
                   1. Details You Share
                 </h3>
                 <p>
@@ -1210,7 +1210,7 @@ export default function ResortWebsiteSections({
                   guest count are formatted so you can send them directly to our
                   official WhatsApp desk.
                 </p>
-                <h3 className="font-serif font-bold text-lg text-[#1E261A]">
+                <h3 className="font-serif font-bold text-lg text-[#0F3B1A]">
                   2. How We Use Your Information
                 </h3>
                 <p>
@@ -1222,20 +1222,20 @@ export default function ResortWebsiteSections({
             )}
 
             {activePage === 'cookies' && (
-              <div className="space-y-4 text-sm text-[#46563D] leading-relaxed">
+              <div className="space-y-4 text-sm text-[#2C4631] leading-relaxed">
                 <p>
                   This Cookies Policy explains how{' '}
                   <strong>The Green Heritage Resort and Banquet</strong> uses browser
                   storage and cookies on this website.
                 </p>
-                <h3 className="font-serif font-bold text-lg text-[#1E261A]">
+                <h3 className="font-serif font-bold text-lg text-[#0F3B1A]">
                   1. Essential Preferences
                 </h3>
                 <p>
                   Essential storage remembers your cookie consent choice so the banner
                   does not appear again on every visit.
                 </p>
-                <h3 className="font-serif font-bold text-lg text-[#1E261A]">
+                <h3 className="font-serif font-bold text-lg text-[#0F3B1A]">
                   2. Maps &amp; Video Playback
                 </h3>
                 <p>
@@ -1271,7 +1271,7 @@ export default function ResortWebsiteSections({
                 </p>
                 <h3
                   id="enquiry-modal-title"
-                  className="font-serif text-2xl sm:text-3xl font-bold text-[#1E261A] mt-1"
+                  className="font-serif text-2xl sm:text-3xl font-bold text-[#0F3B1A] mt-1"
                 >
                   Wedding, Package &amp; Stay Enquiry
                 </h3>
@@ -1280,7 +1280,7 @@ export default function ResortWebsiteSections({
                 type="button"
                 onClick={onCloseEnquiry}
                 aria-label="Close enquiry modal"
-                className="w-9 h-9 rounded-full clay-btn-soft flex items-center justify-center text-sm font-bold text-[#1E261A] cursor-pointer"
+                className="w-9 h-9 rounded-full clay-btn-soft flex items-center justify-center text-sm font-bold text-[#0F3B1A] cursor-pointer"
               >
                 ✕
               </button>
@@ -1288,7 +1288,7 @@ export default function ResortWebsiteSections({
 
             <form onSubmit={handleEnquirySubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-[#46563D] mb-1.5">
+                <label className="block text-xs font-semibold text-[#2C4631] mb-1.5">
                   Your Name *
                 </label>
                 <input
@@ -1303,7 +1303,7 @@ export default function ResortWebsiteSections({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-semibold text-[#46563D] mb-1.5">
+                  <label className="block text-xs font-semibold text-[#2C4631] mb-1.5">
                     Celebration / Package Type
                   </label>
                   <select
@@ -1332,7 +1332,7 @@ export default function ResortWebsiteSections({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#46563D] mb-1.5">
+                  <label className="block text-xs font-semibold text-[#2C4631] mb-1.5">
                     Preferred Date
                   </label>
                   <input
@@ -1346,7 +1346,7 @@ export default function ResortWebsiteSections({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-semibold text-[#46563D] mb-1.5">
+                  <label className="block text-xs font-semibold text-[#2C4631] mb-1.5">
                     Approximate Guests
                   </label>
                   <input
@@ -1359,7 +1359,7 @@ export default function ResortWebsiteSections({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#46563D] mb-1.5">
+                  <label className="block text-xs font-semibold text-[#2C4631] mb-1.5">
                     Preferred Space
                   </label>
                   <select
@@ -1382,7 +1382,7 @@ export default function ResortWebsiteSections({
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#46563D] mb-1.5">
+                <label className="block text-xs font-semibold text-[#2C4631] mb-1.5">
                   Anything Else You Would Like Us to Know? (Optional)
                 </label>
                 <textarea
@@ -1394,7 +1394,7 @@ export default function ResortWebsiteSections({
                 />
               </div>
 
-              <div className="clay-surface rounded-2xl p-3 text-xs text-[#46563D] flex items-center justify-between gap-3">
+              <div className="clay-surface rounded-2xl p-3 text-xs text-[#2C4631] flex items-center justify-between gap-3">
                 <span>
                   Sending opens WhatsApp with your details ready to send to our team.
                 </span>
@@ -1436,9 +1436,9 @@ export default function ResortWebsiteSections({
           - Official Redirecting Icons: Instagram, Facebook, Google Maps, Tripadvisor, Call, WhatsApp
           - Cleanly aligned columns and bottom credits with ACCustomLabs logo
          ========================================================= */}
-      <footer className="relative overflow-hidden text-[#FCF9EA] mt-16 pb-20 sm:pb-10 border-t border-[#A8BBA3]/35 bg-[#0e140c]">
+      <footer className="relative overflow-hidden text-[#FFECCB] mt-16 pb-20 sm:pb-10 border-t border-[#C5A072]/30 bg-[#0A1C0D]">
         {/* Rotated Landscape Footer Background Video (DWrOzj5gYgT) Muted & Looping Seamlessly */}
-        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#0a0d08]">
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#071609]">
           <video
             ref={footerVideoRef}
             src={
@@ -1459,11 +1459,11 @@ export default function ResortWebsiteSections({
             className="w-full h-full object-cover object-center [backface-visibility:hidden]"
           />
           {/* Deep Dark Overlay: Rich and dark for crisp typography, keeping wedding lights & video motion clearly visible */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f07]/90 via-[#0e150b]/82 to-[#070b05]/94" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1C0D]/92 via-[#0D2411]/84 to-[#061208]/96" />
         </div>
 
         <div className="relative z-10 max-w-[1360px] mx-auto px-4 sm:px-6 pt-12 pb-8">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-[#A8BBA3]/25 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-[#9FED72]/20 items-start">
             {/* Brand Column: Big Logo Directly on Dark Surface (NO Rectangular Box) */}
             <div className="md:col-span-6 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5">
               <img
@@ -1475,10 +1475,10 @@ export default function ResortWebsiteSections({
                 <p className="font-cursive text-3xl sm:text-4xl text-[#D4AF37] leading-none drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
                   Where Families Celebrate Together
                 </p>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#FCF9EA] drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#FFECCB] drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
                   The Green Heritage Resort and Banquet
                 </h3>
-                <p className="text-xs sm:text-sm text-[#FCF9EA]/90 max-w-md leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] pt-1">
+                <p className="text-xs sm:text-sm text-[#FFECCB]/90 max-w-md leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] pt-1">
                   Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur, Bihar 844127. Reach out
                   to our team to plan your wedding, reception, or family stay.
                 </p>
@@ -1487,15 +1487,15 @@ export default function ResortWebsiteSections({
 
             {/* Explore Links (Includes Packages, No Numbers in Labels) */}
             <div className="md:col-span-3 text-center sm:text-left space-y-3">
-              <h4 className="font-serif font-bold text-lg text-[#FCF9EA] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              <h4 className="font-serif font-bold text-lg text-[#FFECCB] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 Explore Venue
               </h4>
-              <ul className="space-y-2 text-xs sm:text-sm text-[#FCF9EA]/90">
+              <ul className="space-y-2 text-xs sm:text-sm text-[#FFECCB]/90">
                 <li>
                   <button
                     type="button"
                     onClick={() => onNavigate('home')}
-                    className="hover:text-[#FFA239] transition-colors cursor-pointer"
+                    className="hover:text-[#FFA97B] transition-colors cursor-pointer"
                   >
                     Home Showcase
                   </button>
@@ -1504,7 +1504,7 @@ export default function ResortWebsiteSections({
                   <button
                     type="button"
                     onClick={() => onNavigate('weddings')}
-                    className="hover:text-[#FFA239] transition-colors cursor-pointer"
+                    className="hover:text-[#FFA97B] transition-colors cursor-pointer"
                   >
                     Weddings &amp; Receptions
                   </button>
@@ -1513,7 +1513,7 @@ export default function ResortWebsiteSections({
                   <button
                     type="button"
                     onClick={() => onNavigate('packages')}
-                    className="hover:text-[#FFA239] transition-colors cursor-pointer"
+                    className="hover:text-[#FFA97B] transition-colors cursor-pointer"
                   >
                     Celebration &amp; Stay Packages
                   </button>
@@ -1522,7 +1522,7 @@ export default function ResortWebsiteSections({
                   <button
                     type="button"
                     onClick={() => onNavigate('gallery')}
-                    className="hover:text-[#FFA239] transition-colors cursor-pointer"
+                    className="hover:text-[#FFA97B] transition-colors cursor-pointer"
                   >
                     Full Reel &amp; Photo Gallery
                   </button>
@@ -1531,7 +1531,7 @@ export default function ResortWebsiteSections({
                   <button
                     type="button"
                     onClick={() => onNavigate('facilities')}
-                    className="hover:text-[#FFA239] transition-colors cursor-pointer"
+                    className="hover:text-[#FFA97B] transition-colors cursor-pointer"
                   >
                     Spaces, Stays &amp; Amenities
                   </button>
@@ -1540,7 +1540,7 @@ export default function ResortWebsiteSections({
                   <button
                     type="button"
                     onClick={() => onNavigate('contact')}
-                    className="hover:text-[#FFA239] transition-colors cursor-pointer"
+                    className="hover:text-[#FFA97B] transition-colors cursor-pointer"
                   >
                     Location &amp; Map
                   </button>
@@ -1550,7 +1550,7 @@ export default function ResortWebsiteSections({
 
             {/* Direct Connect & Official Redirecting Site Icons (Instagram, Facebook, Google Maps, Tripadvisor, Call, WhatsApp) */}
             <div className="md:col-span-3 flex flex-col items-center sm:items-start space-y-4">
-              <h4 className="font-serif font-bold text-lg text-[#FCF9EA] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              <h4 className="font-serif font-bold text-lg text-[#FFECCB] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 Connect &amp; Follow
               </h4>
 
@@ -1625,7 +1625,7 @@ export default function ResortWebsiteSections({
                     onClick={onOpenShare}
                     aria-label="Share Resort & View Link Preview"
                     title="Share & Link Preview"
-                    className="w-10 h-10 rounded-full clay-dark-pill flex items-center justify-center transition-all text-[#FCF9EA] hover:text-[#97A87A] cursor-pointer"
+                    className="w-10 h-10 rounded-full clay-dark-pill flex items-center justify-center transition-all text-[#FFECCB] hover:text-[#97A87A] cursor-pointer"
                   >
                     <ShareCustomIcon className="w-4 h-4" />
                   </button>
@@ -1645,7 +1645,7 @@ export default function ResortWebsiteSections({
                   <button
                     type="button"
                     onClick={onOpenShare}
-                    className="px-4 py-2 rounded-full clay-white-header text-[#1E261A] text-xs font-semibold flex items-center gap-1.5 hover:text-[#3B543F] cursor-pointer transition-all"
+                    className="px-4 py-2 rounded-full clay-white-header text-[#0F3B1A] text-xs font-semibold flex items-center gap-1.5 hover:text-[#3B543F] cursor-pointer transition-all"
                   >
                     <ShareCustomIcon className="w-3.5 h-3.5" />
                     <span>Link Preview</span>
@@ -1656,12 +1656,12 @@ export default function ResortWebsiteSections({
           </div>
 
           {/* LAST FOOTER BAR: Centered All Rights Reserved, Baseline-Aligned ACCustomLabs Logo, and Terms/Privacy/Cookies Links */}
-          <div className="pt-8 flex flex-col items-center justify-center text-center gap-3.5 text-xs sm:text-sm text-[#FCF9EA]/90">
-            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs font-medium text-[#FCF9EA]/95">
+          <div className="pt-8 flex flex-col items-center justify-center text-center gap-3.5 text-xs sm:text-sm text-[#FFECCB]/90">
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs font-medium text-[#FFECCB]/95">
               <button
                 type="button"
                 onClick={() => onNavigate('terms')}
-                className="hover:text-[#FFA239] underline underline-offset-4 cursor-pointer transition-colors"
+                className="hover:text-[#FFA97B] underline underline-offset-4 cursor-pointer transition-colors"
               >
                 Terms &amp; Conditions
               </button>
@@ -1671,7 +1671,7 @@ export default function ResortWebsiteSections({
               <button
                 type="button"
                 onClick={() => onNavigate('privacy')}
-                className="hover:text-[#FFA239] underline underline-offset-4 cursor-pointer transition-colors"
+                className="hover:text-[#FFA97B] underline underline-offset-4 cursor-pointer transition-colors"
               >
                 Privacy Policy
               </button>
@@ -1681,7 +1681,7 @@ export default function ResortWebsiteSections({
               <button
                 type="button"
                 onClick={() => onNavigate('cookies')}
-                className="hover:text-[#FFA239] underline underline-offset-4 cursor-pointer transition-colors"
+                className="hover:text-[#FFA97B] underline underline-offset-4 cursor-pointer transition-colors"
               >
                 Cookies Policy
               </button>

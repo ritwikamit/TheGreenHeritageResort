@@ -275,8 +275,8 @@ export default function CurvedHeroFrame({
       <header
         className={`fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-md border-b transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           onDarkHero
-            ? 'bg-black/25 border-[#FCF9EA]/25'
-            : 'bg-[#FCF9EA]/85 border-[#97A87A]/35 shadow-sm'
+            ? 'bg-black/30 border-white/20'
+            : 'bg-[#FFECCB]/90 border-white/70 shadow-[0_8px_20px_rgba(197,160,114,0.32)]'
         } ${
           hideHeader
             ? 'opacity-0 -translate-y-full pointer-events-none'
@@ -291,7 +291,7 @@ export default function CurvedHeroFrame({
               type="button"
               aria-label="Open Navigation Menu"
               onClick={() => setMobileDrawerOpen(true)}
-              className="sm:hidden w-8 h-8 rounded-full clay-white-header flex items-center justify-center text-[#1E261A] shrink-0 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+              className="sm:hidden w-8 h-8 rounded-full clay-white-header flex items-center justify-center text-[#0F3B1A] shrink-0 hover:scale-105 active:scale-95 transition-all cursor-pointer"
             >
               <MenuCustomIcon className="w-4 h-4" />
             </button>
@@ -310,8 +310,8 @@ export default function CurvedHeroFrame({
                 <span
                   className={`block font-serif font-bold text-xs sm:text-sm lg:text-base tracking-tight truncate transition-colors ${
                     onDarkHero
-                      ? 'text-[#FCF9EA] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]'
-                      : 'text-[#1E261A]'
+                      ? 'text-[#FFECCB] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]'
+                      : 'text-[#0F3B1A]'
                   }`}
                 >
                   The Green Heritage Resort
@@ -319,8 +319,8 @@ export default function CurvedHeroFrame({
                 <span
                   className={`flex items-center gap-0.5 sm:gap-1 text-[10px] sm:text-xs truncate transition-colors ${
                     onDarkHero
-                      ? 'text-[#D4AF37] drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]'
-                      : 'text-[#5E7147]'
+                      ? 'text-[#FFA97B] drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]'
+                      : 'text-[#E00000]'
                   }`}
                 >
                   <MapPinCustomIcon className="w-2.5 h-2.5 shrink-0" />
@@ -349,8 +349,8 @@ export default function CurvedHeroFrame({
                     active
                       ? 'clay-pill-active font-semibold'
                       : onDarkHero
-                      ? 'text-[#FCF9EA] hover:text-white hover:bg-white/15 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]'
-                      : 'text-[#1E261A] hover:text-[#1E261A] hover:bg-[#A8BBA3]/35'
+                      ? 'text-[#FFECCB] hover:text-white hover:bg-white/15 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]'
+                      : 'text-[#0F3B1A] hover:text-[#E00000] hover:bg-white/40'
                   }`}
                 >
                   {item.label}
@@ -368,8 +368,8 @@ export default function CurvedHeroFrame({
                   activePage === 'contact' || moreMenuOpen
                     ? 'clay-pill-active font-semibold'
                     : onDarkHero
-                    ? 'text-[#FCF9EA] hover:text-white hover:bg-white/15 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]'
-                    : 'text-[#1E261A] hover:text-[#1E261A] hover:bg-[#A8BBA3]/35'
+                    ? 'text-[#FFECCB] hover:text-white hover:bg-white/15 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]'
+                    : 'text-[#0F3B1A] hover:text-[#E00000] hover:bg-white/40'
                 }`}
               >
                 <span>More</span>
@@ -388,7 +388,7 @@ export default function CurvedHeroFrame({
                       onNavigate('packages');
                       setMoreMenuOpen(false);
                     }}
-                    className="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-medium text-[#1E261A] hover:bg-[#A8BBA3]/30 transition-colors cursor-pointer"
+                    className="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-medium text-[#0F3B1A] hover:bg-white/50 transition-colors cursor-pointer"
                   >
                     Celebration Packages
                   </button>
@@ -398,7 +398,7 @@ export default function CurvedHeroFrame({
                       onNavigate('contact');
                       setMoreMenuOpen(false);
                     }}
-                    className="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-medium text-[#1E261A] hover:bg-[#A8BBA3]/30 transition-colors cursor-pointer"
+                    className="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-medium text-[#0F3B1A] hover:bg-white/50 transition-colors cursor-pointer"
                   >
                     Location &amp; Directions
                   </button>
@@ -408,7 +408,7 @@ export default function CurvedHeroFrame({
                       setMoreMenuOpen(false);
                       onOpenEnquiry('Wedding / Reception');
                     }}
-                    className="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold text-[#1E261A] bg-[#FFA239]/25 hover:bg-[#FFA239]/45 transition-colors cursor-pointer mt-1"
+                    className="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold text-[#FFFFFF] bg-[#E00000] hover:bg-[#C80000] transition-colors cursor-pointer mt-1 shadow-sm"
                   >
                     Wedding Date Enquiry
                   </button>
@@ -417,7 +417,7 @@ export default function CurvedHeroFrame({
             </div>
           </nav>
 
-          {/* Right: Claymorphic Call, Share & Enquire Now Buttons */}
+          {/* Right: Neumorphic Call, Share & Enquire Now Buttons */}
           <div className="flex items-center gap-1 sm:gap-2 lg:gap-2.5 shrink-0">
             {onOpenShare && (
               <button
@@ -425,7 +425,7 @@ export default function CurvedHeroFrame({
                 onClick={onOpenShare}
                 aria-label="Share Resort & View Link Preview"
                 title="Share & Link Preview"
-                className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full clay-white-header flex items-center justify-center text-[#1E261A] hover:text-[#3B543F] hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full clay-white-header flex items-center justify-center text-[#0F3B1A] hover:text-[#E00000] hover:scale-105 active:scale-95 transition-all cursor-pointer"
               >
                 <ShareCustomIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
@@ -464,10 +464,10 @@ export default function CurvedHeroFrame({
           />
 
           {/* Drawer Content Panel Sliding from Left */}
-          <aside className="fixed inset-y-0 left-0 w-[84vw] max-w-xs bg-[#131d11]/98 border-r border-[#97A87A]/35 text-[#FCF9EA] p-5 flex flex-col justify-between overflow-y-auto z-10 shadow-2xl animate-slideInLeft">
+          <aside className="fixed inset-y-0 left-0 w-[84vw] max-w-xs bg-[#0A1C0D]/98 border-r border-[#9FED72]/30 text-[#FFECCB] p-5 flex flex-col justify-between overflow-y-auto z-10 shadow-2xl animate-slideInLeft">
             <div className="space-y-5">
               {/* Top Drawer Header: Brand + Close Button */}
-              <div className="flex items-center justify-between pb-4 border-b border-[#A8BBA3]/25">
+              <div className="flex items-center justify-between pb-4 border-b border-[#9FED72]/20">
                 <div className="flex items-center gap-2.5 min-w-0">
                   <img
                     src="/Logo.png"
@@ -475,10 +475,10 @@ export default function CurvedHeroFrame({
                     className="h-10 w-auto object-contain shrink-0"
                   />
                   <div className="min-w-0">
-                    <h3 className="font-serif font-bold text-xs text-[#FCF9EA] leading-tight truncate">
+                    <h3 className="font-serif font-bold text-xs text-[#FFECCB] leading-tight truncate">
                       The Green Heritage
                     </h3>
-                    <p className="flex items-center gap-1 text-[10px] text-[#D4AF37] truncate">
+                    <p className="flex items-center gap-1 text-[10px] text-[#FFA97B] truncate">
                       <MapPinCustomIcon className="w-2.5 h-2.5 shrink-0" />
                       <span className="truncate">Bakarpur, Muzaffarpur</span>
                     </p>
@@ -489,7 +489,7 @@ export default function CurvedHeroFrame({
                   type="button"
                   onClick={() => setMobileDrawerOpen(false)}
                   aria-label="Close Navigation"
-                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-[#FCF9EA] flex items-center justify-center transition-colors cursor-pointer shrink-0"
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-[#FFECCB] flex items-center justify-center transition-colors cursor-pointer shrink-0"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -518,10 +518,10 @@ export default function CurvedHeroFrame({
                       className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-medium text-left transition-all cursor-pointer ${
                         isActive
                           ? 'clay-pill-active font-semibold shadow-md'
-                          : 'text-[#FCF9EA]/90 hover:text-white hover:bg-white/10'
+                          : 'text-[#FFECCB]/90 hover:text-white hover:bg-white/10'
                       }`}
                     >
-                      <Icon className="w-4 h-4 shrink-0 text-[#D4AF37]" />
+                      <Icon className="w-4 h-4 shrink-0 text-[#9FED72]" />
                       <span className="flex-1">{item.label}</span>
                       <ChevronRight className="w-3.5 h-3.5 opacity-50" />
                     </button>
@@ -530,18 +530,18 @@ export default function CurvedHeroFrame({
               </nav>
 
               {/* Quick Info Badge */}
-              <div className="clay-surface rounded-2xl p-3 text-[11px] text-[#1E261A] bg-[#FCF9EA] border border-[#97A87A]/35">
-                <span className="font-semibold block text-[#3B543F]">
+              <div className="clay-surface rounded-2xl p-3 text-[11px] text-[#0F3B1A] bg-[#FFECCB] border border-white/60">
+                <span className="font-semibold block text-[#0F3B1A]">
                   Venue Desk Open Daily
                 </span>
-                <span className="text-[#46563D] block text-[10px] mt-0.5">
+                <span className="text-[#2C4631] block text-[10px] mt-0.5">
                   Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur
                 </span>
               </div>
             </div>
 
             {/* Bottom Actions inside Drawer */}
-            <div className="pt-4 border-t border-[#A8BBA3]/25 space-y-2.5">
+            <div className="pt-4 border-t border-[#9FED72]/20 space-y-2.5">
               <button
                 type="button"
                 onClick={() => {
@@ -557,18 +557,18 @@ export default function CurvedHeroFrame({
               <div className="grid grid-cols-2 gap-2">
                 <a
                   href="tel:+919234052600"
-                  className="py-2 px-3 rounded-full bg-white/10 hover:bg-white/20 text-[#FCF9EA] text-[11px] font-medium flex items-center justify-center gap-1.5 transition-colors"
+                  className="py-2 px-3 rounded-full bg-white/10 hover:bg-white/20 text-[#FFECCB] text-[11px] font-medium flex items-center justify-center gap-1.5 transition-colors"
                 >
-                  <PhoneCallCustomIcon className="w-3.5 h-3.5 text-[#FFA239]" />
+                  <PhoneCallCustomIcon className="w-3.5 h-3.5 text-[#FFA97B]" />
                   <span>Call Us</span>
                 </a>
                 <a
                   href="https://wa.me/919234052600?text=Hello%20The%20Green%20Heritage%20Resort%20and%20Banquet%2C%20I%20would%20like%20to%20enquire%20about%20dates."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-2 px-3 rounded-full bg-emerald-800/60 hover:bg-emerald-700/70 text-emerald-100 text-[11px] font-medium flex items-center justify-center gap-1.5 transition-colors"
+                  className="py-2 px-3 rounded-full bg-[#0F2A14] hover:bg-[#153C1C] text-[#9FED72] border border-[#9FED72]/30 text-[11px] font-medium flex items-center justify-center gap-1.5 transition-colors"
                 >
-                  <WhatsAppCustomIcon className="w-3.5 h-3.5 text-emerald-300" />
+                  <WhatsAppCustomIcon className="w-3.5 h-3.5 text-[#9FED72]" />
                   <span>WhatsApp</span>
                 </a>
               </div>
@@ -580,7 +580,7 @@ export default function CurvedHeroFrame({
                     setMobileDrawerOpen(false);
                     onOpenShare();
                   }}
-                  className="w-full py-1.5 text-center text-[11px] text-[#A8BBA3] hover:text-[#FCF9EA] transition-colors cursor-pointer"
+                  className="w-full py-1.5 text-center text-[11px] text-[#9FED72] hover:text-white transition-colors cursor-pointer"
                 >
                   Share &amp; View Link Preview →
                 </button>
@@ -643,21 +643,21 @@ export default function CurvedHeroFrame({
               </p>
 
               {/* Static line + fixed-height changing line so no surrounding text ever shifts */}
-              <h1 className="mt-2 font-serif font-bold text-[#FCF9EA] text-3xl sm:text-5xl lg:text-[58px] leading-[1.12] tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
+              <h1 className="mt-2 font-serif font-bold text-[#FFECCB] text-3xl sm:text-5xl lg:text-[58px] leading-[1.12] tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
                 <span className="block">
                   A Beautiful Home in Muzaffarpur for
                 </span>
                 <span className="block h-[1.22em] overflow-hidden mt-1">
                   <span
                     key={highlightIdx}
-                    className="inline-block animate-word-swap text-[#FFA239] drop-shadow-[0_4px_18px_rgba(0,0,0,0.95)]"
+                    className="inline-block animate-word-swap text-[#FFA97B] drop-shadow-[0_4px_18px_rgba(0,0,0,0.95)]"
                   >
                     {ROTATING_HIGHLIGHTS[highlightIdx]}
                   </span>
                 </span>
               </h1>
 
-              <p className="mt-3 text-sm sm:text-base md:text-lg text-[#FCF9EA] max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_14px_rgba(0,0,0,0.9)]">
+              <p className="mt-3 text-sm sm:text-base md:text-lg text-[#FFECCB] max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_14px_rgba(0,0,0,0.9)]">
                 From the moment the bride walks under our lit arches to the laughter of
                 elders on the green lawn, we help your family celebrate every moment with
                 warmth and peace of mind.
@@ -703,11 +703,11 @@ export default function CurvedHeroFrame({
           <div
             ref={heroRibbonContainerRef}
             aria-label="Venue highlights ribbon"
-            className="relative z-20 w-full overflow-hidden clay-dark-bar py-3 border-y border-[#A8BBA3]/45 select-none"
+            className="relative z-20 w-full overflow-hidden clay-dark-bar py-3 border-y border-[#9FED72]/30 select-none"
           >
             <div
               ref={heroRibbonRef}
-              className="flex whitespace-nowrap will-change-transform text-xs sm:text-sm font-semibold tracking-[0.22em] text-[#FCF9EA]"
+              className="flex whitespace-nowrap will-change-transform text-xs sm:text-sm font-semibold tracking-[0.22em] text-[#FFECCB]"
             >
               {Array.from({ length: 6 }).map((_, i) => (
                 <span key={i} className="mx-2">
