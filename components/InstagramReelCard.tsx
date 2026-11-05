@@ -17,39 +17,47 @@ export default function InstagramReelCard({
   const videoRef = useRef<HTMLVideoElement>(null);
   const inViewRef = useRef(false);
   const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const tryPlay = () => {
     const v = videoRef.current;
     if (!v) return;
     v.muted = isMuted;
-    if (v.paused) {
-      v.play().catch(() => {});
+    const playPromise = v.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => setIsPlaying(true))
+        .catch(() => {
+          // Fallback to muted if unmuted was rejected
+          v.muted = true;
+          setIsMuted(true);
+          v.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
+        });
     }
   };
 
   useEffect(() => {
     const node = containerRef.current;
-    if (!node) return;
+    const v = videoRef.current;
+    if (!node || !v) return;
+
+    v.muted = isMuted;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           inViewRef.current = entry.isIntersecting;
-          const v = videoRef.current;
-          if (!v) return;
           if (entry.isIntersecting) {
-            v.muted = isMuted;
-            if (v.paused) {
-              v.play().catch(() => {});
-            }
+            tryPlay();
           } else {
             if (!v.paused) {
               v.pause();
+              setIsPlaying(false);
             }
           }
         });
       },
-      { rootMargin: '180px 0px', threshold: 0.01 }
+      { rootMargin: '120px 0px', threshold: 0.15 }
     );
 
     observer.observe(node);
@@ -63,8 +71,19 @@ export default function InstagramReelCard({
     if (videoRef.current) {
       videoRef.current.muted = nextMuted;
       if (videoRef.current.paused) {
-        videoRef.current.play().catch(() => {});
+        tryPlay();
       }
+    }
+  };
+
+  const handleCardClick = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      tryPlay();
+    } else {
+      v.pause();
+      setIsPlaying(false);
     }
   };
 
@@ -73,8 +92,9 @@ export default function InstagramReelCard({
   return (
     <div
       ref={containerRef}
+      onClick={handleCardClick}
       onMouseEnter={tryPlay}
-      className={`group relative overflow-hidden rounded-[26px] border-2 border-[#A8BBA3]/85 bg-[#1E261A] shadow-[0_12px_26px_rgba(30,38,26,0.18)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.04] hover:border-[#FFA239] hover:z-20 ${
+      className={`group relative overflow-hidden rounded-[26px] border-2 border-[#A8BBA3]/85 bg-[#1E261A] shadow-[0_12px_26px_rgba(30,38,26,0.18)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:border-[#FFA239] cursor-pointer ${
         isLandscape ? 'aspect-video w-full' : 'aspect-[9/16] w-full'
       } ${className}`}
     >
@@ -86,19 +106,26 @@ export default function InstagramReelCard({
         loop
         playsInline
         autoPlay
-        preload="auto"
-        onLoadedData={() => {
-          if (inViewRef.current) tryPlay();
-        }}
-        onCanPlay={() => {
-          if (inViewRef.current) tryPlay();
-        }}
+        preload="metadata"
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
         className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 [backface-visibility:hidden]"
         style={{ objectPosition: reel.objectPosition || '50% 30%' }}
       />
 
       {/* Subtle bottom contrast scrim strictly for small video details & mute button */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 via-black/35 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+
+      {/* Play/Pause state indicator on smartphone tap */}
+      {!isPlaying && (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/35 backdrop-blur-[2px]">
+          <div className="w-14 h-14 rounded-full bg-white/20 border border-white/30 flex items-center justify-center text-white backdrop-blur-md shadow-lg">
+            <svg className="w-7 h-7 ml-1" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+      )}
 
       {/* Minimal footer: ONLY small details on left + Mute/Unmute button on right */}
       <div className="absolute inset-x-4 bottom-3.5 z-20 flex items-end justify-between gap-2.5">
@@ -116,7 +143,7 @@ export default function InstagramReelCard({
           onClick={toggleMute}
           aria-label={isMuted ? 'Unmute video' : 'Mute video'}
           title={isMuted ? 'Unmute audio' : 'Mute audio'}
-          className="shrink-0 w-9 h-9 rounded-full clay-btn-coral flex items-center justify-center transition-transform hover:scale-105 cursor-pointer"
+          className="shrink-0 w-9 h-9 rounded-full clay-btn-coral flex items-center justify-center transition-transform hover:scale-105 cursor-pointer z-30"
         >
           {isMuted ? (
             <VolumeMuteCustomIcon className="w-4 h-4" />

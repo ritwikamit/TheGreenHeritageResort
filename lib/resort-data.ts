@@ -2,6 +2,7 @@ export interface InstagramReelItem {
   code: string;
   url: string;
   videoSrc: string;
+  mobileVideoSrc?: string;
   poster: string;
   orientation: 'portrait' | 'landscape';
   rotateToLandscape: boolean;
@@ -41,6 +42,7 @@ export const HERO_BACKGROUND_REELS: InstagramReelItem[] = [
     code: 'DVwj-NrE08f',
     url: 'https://www.instagram.com/reel/DVwj-NrE08f/?utm_source=ig_web_copy_link',
     videoSrc: '/reels/DVwj-NrE08f-landscape.mp4',
+    mobileVideoSrc: '/reels/DYDC4t6T_gq.mp4',
     poster: '/reels/DVwj-NrE08f-landscape.jpg',
     orientation: 'landscape',
     rotateToLandscape: true,
@@ -52,6 +54,7 @@ export const HERO_BACKGROUND_REELS: InstagramReelItem[] = [
     code: 'DYDC4t6T_gq',
     url: 'https://www.instagram.com/reel/DYDC4t6T_gq/?utm_source=ig_web_copy_link',
     videoSrc: '/reels/DYDC4t6T_gq-landscape.mp4',
+    mobileVideoSrc: '/reels/DOsHLCYE86A.mp4',
     poster: '/reels/DYDC4t6T_gq-landscape.jpg',
     orientation: 'landscape',
     rotateToLandscape: true,
@@ -64,8 +67,8 @@ export const HERO_BACKGROUND_REELS: InstagramReelItem[] = [
 // Signature Portrait Video Box for the dedicated section right after Hero on the Landing Page
 export const SIGNATURE_PORTRAIT_REEL: InstagramReelItem = {
   code: 'DRuInL5kZdn',
-  url: 'https://www.instagram.com/reel/DRuInL5kZdn/?utm_source=ig_web_copy_link',
-  videoSrc: '/reels/DRuInL5kZdn.mp4',
+    url: 'https://www.instagram.com/reel/DRuInL5kZdn/?utm_source=ig_web_copy_link',
+    videoSrc: '/reels/DG6zl2pTgbj.mp4',
   poster: '/reels/DRuInL5kZdn.jpg',
   orientation: 'portrait',
   rotateToLandscape: false,
@@ -77,8 +80,9 @@ export const SIGNATURE_PORTRAIT_REEL: InstagramReelItem = {
 // Rotated Landscape Footer Background Video (DWrOzj5gYgT) playing muted on seamless loop
 export const FOOTER_BACKGROUND_REEL: InstagramReelItem = {
   code: 'DWrOzj5gYgT',
-  url: 'https://www.instagram.com/reel/DWrOzj5gYgT/?utm_source=ig_web_copy_link',
+    url: 'https://www.instagram.com/reel/DWrOzj5gYgT/?utm_source=ig_web_copy_link',
   videoSrc: '/reels/DWrOzj5gYgT-landscape.mp4',
+  mobileVideoSrc: '/reels/DG6zl2pTgbj.mp4',
   poster: '/reels/DWrOzj5gYgT-landscape.jpg',
   orientation: 'landscape',
   rotateToLandscape: true,
@@ -87,12 +91,11 @@ export const FOOTER_BACKGROUND_REEL: InstagramReelItem = {
   objectPosition: '50% 50%',
 };
 
-// 11 Portrait Reels (first 4 distinct reels appear in the Reels section on Landing Page; all 11 on Gallery/Weddings pages)
 export const PORTRAIT_REELS: InstagramReelItem[] = [
   {
     code: 'DOuvU_Jk52G',
     url: 'https://www.instagram.com/reel/DOuvU_Jk52G/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DOuvU_Jk52G.mp4',
+    videoSrc: '/reels/DOsHLCYE86A.mp4',
     poster: '/reels/DOuvU_Jk52G.jpg',
     orientation: 'portrait',
     rotateToLandscape: false,
@@ -103,8 +106,8 @@ export const PORTRAIT_REELS: InstagramReelItem[] = [
   {
     code: 'DRuInL5kZdn',
     url: 'https://www.instagram.com/reel/DRuInL5kZdn/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DRuInL5kZdn.mp4',
-    poster: '/reels/DRuInL5kZdn.jpg',
+    videoSrc: '/reels/DG6zl2pTgbj.mp4',
+    poster: '/reels/DYDC4t6T_gq.jpg',
     orientation: 'portrait',
     rotateToLandscape: false,
     title: 'Golden Canopy Couple Walk',
@@ -114,7 +117,7 @@ export const PORTRAIT_REELS: InstagramReelItem[] = [
   {
     code: 'DSX6M96E0xo',
     url: 'https://www.instagram.com/reel/DSX6M96E0xo/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DSX6M96E0xo.mp4',
+  videoSrc: '/reels/DYDC4t6T_gq.mp4',
     poster: '/reels/DSX6M96E0xo.jpg',
     orientation: 'portrait',
     rotateToLandscape: false,
@@ -125,7 +128,7 @@ export const PORTRAIT_REELS: InstagramReelItem[] = [
   {
     code: 'DPX65sMEzBG',
     url: 'https://www.instagram.com/reel/DPX65sMEzBG/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DPX65sMEzBG.mp4',
+    videoSrc: '/reels/DOsHLCYE86A.mp4',
     poster: '/reels/DPX65sMEzBG.jpg',
     orientation: 'portrait',
     rotateToLandscape: false,
@@ -136,7 +139,7 @@ export const PORTRAIT_REELS: InstagramReelItem[] = [
   {
     code: 'DNUaVcRzvai',
     url: 'https://www.instagram.com/reel/DNUaVcRzvai/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DNUaVcRzvai.mp4',
+    videoSrc: '/reels/DG6zl2pTgbj.mp4',
     poster: '/reels/DNUaVcRzvai.jpg',
     orientation: 'portrait',
     rotateToLandscape: false,
@@ -147,7 +150,7 @@ export const PORTRAIT_REELS: InstagramReelItem[] = [
   {
     code: 'DS8DEbWE0dy',
     url: 'https://www.instagram.com/reel/DS8DEbWE0dy/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DS8DEbWE0dy.mp4',
+  videoSrc: '/reels/DYDC4t6T_gq.mp4',
     poster: '/reels/DS8DEbWE0dy.jpg',
     orientation: 'portrait',
     rotateToLandscape: false,
@@ -158,7 +161,7 @@ export const PORTRAIT_REELS: InstagramReelItem[] = [
   {
     code: 'DEUz9DUTxFS',
     url: 'https://www.instagram.com/reel/DEUz9DUTxFS/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DEUz9DUTxFS.mp4',
+    videoSrc: '/reels/DOsHLCYE86A.mp4',
     poster: '/reels/DEUz9DUTxFS.jpg',
     orientation: 'portrait',
     rotateToLandscape: false,
@@ -169,7 +172,7 @@ export const PORTRAIT_REELS: InstagramReelItem[] = [
   {
     code: 'DdRCjAozIMf',
     url: 'https://www.instagram.com/reel/DdRCjAozIMf/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DdRCjAozIMf.mp4',
+    videoSrc: '/reels/DG6zl2pTgbj.mp4',
     poster: '/reels/DdRCjAozIMf.jpg',
     orientation: 'portrait',
     rotateToLandscape: false,
@@ -180,7 +183,7 @@ export const PORTRAIT_REELS: InstagramReelItem[] = [
   {
     code: 'DRJmExnkdEu',
     url: 'https://www.instagram.com/reel/DRJmExnkdEu/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DRJmExnkdEu.mp4',
+  videoSrc: '/reels/DYDC4t6T_gq.mp4',
     poster: '/reels/DRJmExnkdEu.jpg',
     orientation: 'portrait',
     rotateToLandscape: false,
@@ -217,7 +220,7 @@ export const LANDSCAPE_REELS: InstagramReelItem[] = [
   {
     code: 'DSG3HcWEcov',
     url: 'https://www.instagram.com/reel/DSG3HcWEcov/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DSG3HcWEcov-landscape.mp4',
+    videoSrc: '/reels/DVwj-NrE08f-landscape.mp4',
     poster: '/reels/DSG3HcWEcov-landscape.jpg',
     orientation: 'landscape',
     rotateToLandscape: true,
@@ -228,7 +231,7 @@ export const LANDSCAPE_REELS: InstagramReelItem[] = [
   {
     code: 'DSh4yfBk46u',
     url: 'https://www.instagram.com/reel/DSh4yfBk46u/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DSh4yfBk46u-landscape.mp4',
+    videoSrc: '/reels/DYDC4t6T_gq-landscape.mp4',
     poster: '/reels/DSh4yfBk46u-landscape.jpg',
     orientation: 'landscape',
     rotateToLandscape: true,
@@ -239,7 +242,7 @@ export const LANDSCAPE_REELS: InstagramReelItem[] = [
   {
     code: 'DYB-3YUSOa6',
     url: 'https://www.instagram.com/reel/DYB-3YUSOa6/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DYB-3YUSOa6-landscape.mp4',
+    videoSrc: '/reels/DWrOzj5gYgT-landscape.mp4',
     poster: '/reels/DYB-3YUSOa6-landscape.jpg',
     orientation: 'landscape',
     rotateToLandscape: true,
@@ -250,7 +253,7 @@ export const LANDSCAPE_REELS: InstagramReelItem[] = [
   {
     code: 'DYKE6VGzG3Y',
     url: 'https://www.instagram.com/reel/DYKE6VGzG3Y/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DYKE6VGzG3Y-landscape.mp4',
+    videoSrc: '/reels/DVwj-NrE08f-landscape.mp4',
     poster: '/reels/DYKE6VGzG3Y-landscape.jpg',
     orientation: 'landscape',
     rotateToLandscape: true,
@@ -261,7 +264,7 @@ export const LANDSCAPE_REELS: InstagramReelItem[] = [
   {
     code: 'DX7LL3hz0nI',
     url: 'https://www.instagram.com/reel/DX7LL3hz0nI/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DX7LL3hz0nI-landscape.mp4',
+    videoSrc: '/reels/DYDC4t6T_gq-landscape.mp4',
     poster: '/reels/DX7LL3hz0nI-landscape.jpg',
     orientation: 'landscape',
     rotateToLandscape: true,
@@ -272,7 +275,7 @@ export const LANDSCAPE_REELS: InstagramReelItem[] = [
   {
     code: 'DSh4iGwk2HB',
     url: 'https://www.instagram.com/reel/DSh4iGwk2HB/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DSh4iGwk2HB.mp4',
+    videoSrc: '/reels/DVwj-NrE08f-landscape.mp4',
     poster: '/reels/DSh4iGwk2HB.jpg',
     orientation: 'landscape',
     rotateToLandscape: false,
@@ -283,7 +286,7 @@ export const LANDSCAPE_REELS: InstagramReelItem[] = [
   {
     code: 'DdqK4M6HVBm',
     url: 'https://www.instagram.com/reel/DdqK4M6HVBm/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DdqK4M6HVBm.mp4',
+    videoSrc: '/reels/DYDC4t6T_gq-landscape.mp4',
     poster: '/reels/DdqK4M6HVBm.jpg',
     orientation: 'landscape',
     rotateToLandscape: false,
@@ -294,7 +297,7 @@ export const LANDSCAPE_REELS: InstagramReelItem[] = [
   {
     code: 'DdGFEFrEfv_',
     url: 'https://www.instagram.com/reel/DdGFEFrEfv_/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DdGFEFrEfv_.mp4',
+    videoSrc: '/reels/DWrOzj5gYgT-landscape.mp4',
     poster: '/reels/DdGFEFrEfv_.jpg',
     orientation: 'landscape',
     rotateToLandscape: false,
@@ -305,7 +308,7 @@ export const LANDSCAPE_REELS: InstagramReelItem[] = [
   {
     code: 'DVwj-NrE08f',
     url: 'https://www.instagram.com/reel/DVwj-NrE08f/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DVwj-NrE08f-landscape.mp4',
+    videoSrc: '/reels/DG6zl2pTgbj.mp4',
     poster: '/reels/DVwj-NrE08f-landscape.jpg',
     orientation: 'landscape',
     rotateToLandscape: true,
@@ -316,7 +319,7 @@ export const LANDSCAPE_REELS: InstagramReelItem[] = [
   {
     code: 'DYDC4t6T_gq',
     url: 'https://www.instagram.com/reel/DYDC4t6T_gq/?utm_source=ig_web_copy_link',
-    videoSrc: '/reels/DYDC4t6T_gq-landscape.mp4',
+  videoSrc: '/reels/DWrOzj5gYgT-landscape.mp4',
     poster: '/reels/DYDC4t6T_gq-landscape.jpg',
     orientation: 'landscape',
     rotateToLandscape: true,

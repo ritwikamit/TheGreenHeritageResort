@@ -179,6 +179,25 @@ export default function ResortWebsiteSections({
     onCloseEnquiry();
   };
 
+  // Lock body scroll when enquiry modal is open so nothing bleeds or scrolls
+  useEffect(() => {
+    if (isEnquiryModalOpen) {
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = prevOverflow;
+      };
+    }
+  }, [isEnquiryModalOpen]);
+
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
   const footerVideoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
@@ -448,6 +467,11 @@ export default function ResortWebsiteSections({
             </div>
           </section>
 
+          {/* MOMENTS THAT STAY IN YOUR HEART FOREVER (INCLINED MOVING PHOTO GALLERY) */}
+          <InclinedScrollGallerySection
+            onOpenGallery={() => onNavigate('gallery')}
+          />
+
           {/* 2. FEATURED WEDDING REELS SECTION (STRICTLY 4 LANDSCAPE + 4 PORTRAIT ON LANDING PAGE) */}
           <section id="cinema-reels-section" className="scroll-mt-24 space-y-12">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -595,12 +619,7 @@ export default function ResortWebsiteSections({
             </div>
           </section>
 
-          {/* 4. INCLINED TWO-ROW MOVING PHOTO GALLERY WITH TOP & BOTTOM MOVING TEXT RIBBONS */}
-          <InclinedScrollGallerySection
-            onOpenGallery={() => onNavigate('gallery')}
-          />
-
-          {/* 5. DEDICATED INTERACTIVE MAP & LOCATION SECTION ON LANDING PAGE (NO CALL OR WHATSAPP ICONS) */}
+          {/* 4. DEDICATED INTERACTIVE MAP & LOCATION SECTION ON LANDING PAGE (NO CALL OR WHATSAPP ICONS) */}
           <section id="map-location-section" className="scroll-mt-24">
             <div className="clay-card p-6 sm:p-8 lg:p-10">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -1238,7 +1257,7 @@ export default function ResortWebsiteSections({
           role="dialog"
           aria-modal="true"
           aria-labelledby="enquiry-modal-title"
-          className="fixed inset-0 z-[90] flex items-center justify-center p-3 sm:p-5 bg-[#161D13]/75 backdrop-blur-sm animate-fadeIn"
+          className="fixed inset-0 z-[120] flex items-center justify-center p-3 sm:p-5 bg-black/85 backdrop-blur-md animate-fadeIn"
           onClick={onCloseEnquiry}
         >
           <div
@@ -1422,13 +1441,17 @@ export default function ResortWebsiteSections({
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#0a0d08]">
           <video
             ref={footerVideoRef}
-            src={FOOTER_BACKGROUND_REEL.videoSrc}
+            src={
+              isMobile && FOOTER_BACKGROUND_REEL.mobileVideoSrc
+                ? FOOTER_BACKGROUND_REEL.mobileVideoSrc
+                : FOOTER_BACKGROUND_REEL.videoSrc
+            }
             poster={FOOTER_BACKGROUND_REEL.poster}
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             onEnded={(e) => {
               e.currentTarget.currentTime = 0;
               e.currentTarget.play().catch(() => {});

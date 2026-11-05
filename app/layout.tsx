@@ -335,6 +335,17 @@ export default function RootLayout({
               .font-serif {
                 font-family: var(--font-serif), Georgia, serif;
               }
+              @keyframes slideInLeft {
+                from {
+                  transform: translate3d(-100%, 0, 0);
+                }
+                to {
+                  transform: translate3d(0, 0, 0);
+                }
+              }
+              .animate-slideInLeft {
+                animation: slideInLeft 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+              }
               @keyframes smoothWordSwap {
                 0% {
                   opacity: 0;

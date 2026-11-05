@@ -213,6 +213,7 @@ export default function InclinedScrollGallerySection({
                   src={photo.src}
                   alt={photo.title}
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
@@ -245,6 +246,7 @@ export default function InclinedScrollGallerySection({
                   src={photo.src}
                   alt={photo.title}
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />

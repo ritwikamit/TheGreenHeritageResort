@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronDown, Compass, Gift } from 'lucide-react';
+import { ChevronDown, ChevronRight, Compass, Gift, X } from 'lucide-react';
 import { HERO_BACKGROUND_REELS } from '@/lib/resort-data';
 import {
   BanquetArchIcon,
@@ -11,6 +11,8 @@ import {
   PhoneCallCustomIcon,
   WeddingRingsIcon,
   ShareCustomIcon,
+  MenuCustomIcon,
+  WhatsAppCustomIcon,
 } from './CustomHeritageIcons';
 
 export type ActivePageView =
@@ -59,8 +61,29 @@ export default function CurvedHeroFrame({
 
   const [bgIndex, setBgIndex] = useState(0);
   const [moreMenuOpen, setMoreMenuOpen] = useState(false);
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [highlightIdx, setHighlightIdx] = useState(0);
   const moreMenuRef = useRef<HTMLDivElement>(null);
+
+  // Screen size check for mobile video optimization
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  // Lock body scroll when mobile drawer is open
+  useEffect(() => {
+    if (mobileDrawerOpen) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
+  }, [mobileDrawerOpen]);
 
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
@@ -83,8 +106,7 @@ export default function CurvedHeroFrame({
     return () => clearInterval(timer);
   }, []);
 
-  // Seamless Sequential Hero Background Playback:
-  // 1. DVwj-NrE08f (rotated landscape) -> 2. DYDC4t6T_gq (rotated landscape) -> loop forever
+  // Seamless Sequential Hero Background Playback
   useEffect(() => {
     switchingRef.current = false;
     bgVideoRefs.current.forEach((v, idx) => {
@@ -132,7 +154,7 @@ export default function CurvedHeroFrame({
     }
   };
 
-  // GPU-Friendly Moving Post-Hero Ribbon (pauses RAF when scrolled out of view)
+  // GPU-Friendly Moving Post-Hero Ribbon
   useEffect(() => {
     if (activePage !== 'home') return;
 
@@ -249,47 +271,66 @@ export default function CurvedHeroFrame({
 
   return (
     <div id="hero-top" className="relative w-full">
-      {/* TRANSLUCENT HEADER WITH LITTLE BLUR, ATTACHED AT TOP, SEPARATED BY JUST A LINE */}
+      {/* TRANSLUCENT HEADER WITH BLUR, ATTACHED AT TOP */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-md border-b transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           onDarkHero
-            ? 'bg-black/15 border-[#FCF9EA]/25'
-            : 'bg-[#FCF9EA]/70 border-[#97A87A]/35'
+            ? 'bg-black/25 border-[#FCF9EA]/25'
+            : 'bg-[#FCF9EA]/85 border-[#97A87A]/35 shadow-sm'
         } ${
           hideHeader
             ? 'opacity-0 -translate-y-full pointer-events-none'
             : 'opacity-100 translate-y-0'
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
-          {/* Left: Brand Logo */}
-          <button
-            type="button"
-            onClick={() => onNavigate('home')}
-            className="flex items-center gap-2.5 text-left group cursor-pointer focus:outline-none shrink-0"
-          >
-            <img
-              src="/Logo.png"
-              alt="The Green Heritage Resort and Banquet"
-              className="h-10 sm:h-11 lg:h-12 w-auto object-contain group-hover:scale-105 transition-transform"
-            />
-            <div className="leading-tight hidden lg:block">
-              <span
-                className={`block font-serif font-bold text-sm lg:text-base tracking-tight whitespace-nowrap transition-colors ${
-                  onDarkHero
-                    ? 'text-[#FCF9EA] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]'
-                    : 'text-[#1E261A]'
-                }`}
-              >
-                The Green Heritage
-              </span>
-              <span className="block font-cursive text-[#D4AF37] text-base lg:text-lg -mt-1 whitespace-nowrap drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]">
-                Resort &amp; Banquet
-              </span>
-            </div>
-          </button>
+        <div className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1.5 sm:gap-4">
+          {/* Left: Hamburger (Smartphone) + Brand Logo + Title & Location */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0">
+            {/* Hamburger button on smartphone */}
+            <button
+              type="button"
+              aria-label="Open Navigation Menu"
+              onClick={() => setMobileDrawerOpen(true)}
+              className="sm:hidden w-8 h-8 rounded-full clay-white-header flex items-center justify-center text-[#1E261A] shrink-0 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+            >
+              <MenuCustomIcon className="w-4 h-4" />
+            </button>
 
-          {/* Center: Aligned Navigation Bar Attached Directly to Header (Tablets & PCs) */}
+            <button
+              type="button"
+              onClick={() => onNavigate('home')}
+              className="flex items-center gap-1.5 sm:gap-2.5 text-left group cursor-pointer focus:outline-none min-w-0"
+            >
+              <img
+                src="/Logo.png"
+                alt="The Green Heritage Resort and Banquet"
+                className="h-8 sm:h-11 lg:h-12 w-auto object-contain group-hover:scale-105 transition-transform shrink-0"
+              />
+              <div className="leading-tight min-w-0">
+                <span
+                  className={`block font-serif font-bold text-xs sm:text-sm lg:text-base tracking-tight truncate transition-colors ${
+                    onDarkHero
+                      ? 'text-[#FCF9EA] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]'
+                      : 'text-[#1E261A]'
+                  }`}
+                >
+                  The Green Heritage Resort
+                </span>
+                <span
+                  className={`flex items-center gap-0.5 sm:gap-1 text-[10px] sm:text-xs truncate transition-colors ${
+                    onDarkHero
+                      ? 'text-[#D4AF37] drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]'
+                      : 'text-[#5E7147]'
+                  }`}
+                >
+                  <MapPinCustomIcon className="w-2.5 h-2.5 shrink-0" />
+                  <span className="truncate">Bakarpur, Muzaffarpur</span>
+                </span>
+              </div>
+            </button>
+          </div>
+
+          {/* Center: Aligned Navigation Bar (Tablets & PCs) */}
           <nav
             aria-label="Primary Navigation"
             className="hidden sm:flex items-center justify-center gap-0.5 md:gap-1 lg:gap-1.5"
@@ -340,7 +381,7 @@ export default function CurvedHeroFrame({
               </button>
 
               {moreMenuOpen && (
-                <div className="absolute right-0 top-full mt-2.5 w-52 clay-white-header rounded-3xl p-2 z-50">
+                <div className="absolute right-0 top-full mt-2.5 w-52 clay-white-header rounded-3xl p-2 z-50 shadow-xl">
                   <button
                     type="button"
                     onClick={() => {
@@ -377,30 +418,30 @@ export default function CurvedHeroFrame({
           </nav>
 
           {/* Right: Claymorphic Call, Share & Enquire Now Buttons */}
-          <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-2.5 shrink-0">
+          <div className="flex items-center gap-1 sm:gap-2 lg:gap-2.5 shrink-0">
             {onOpenShare && (
               <button
                 type="button"
                 onClick={onOpenShare}
                 aria-label="Share Resort & View Link Preview"
                 title="Share & Link Preview"
-                className="w-9 h-9 lg:w-10 lg:h-10 rounded-full clay-white-header flex items-center justify-center text-[#1E261A] hover:text-[#3B543F] hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full clay-white-header flex items-center justify-center text-[#1E261A] hover:text-[#3B543F] hover:scale-105 active:scale-95 transition-all cursor-pointer"
               >
-                <ShareCustomIcon className="w-4 h-4" />
+                <ShareCustomIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
             )}
             <a
               href="tel:+919234052600"
               aria-label="Call The Green Heritage Resort and Banquet"
               title="Call Resort"
-              className="w-9 h-9 lg:w-10 lg:h-10 rounded-full clay-btn-coral flex items-center justify-center"
+              className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full clay-btn-coral flex items-center justify-center shrink-0"
             >
-              <PhoneCallCustomIcon className="w-4 h-4" />
+              <PhoneCallCustomIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </a>
             <button
               type="button"
               onClick={() => onOpenEnquiry('Wedding / Reception')}
-              className="px-3.5 sm:px-4 lg:px-5 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold clay-btn-coral cursor-pointer whitespace-nowrap"
+              className="px-2.5 sm:px-4 lg:px-5 py-1.5 sm:py-2 lg:py-2.5 rounded-full text-[11px] sm:text-xs lg:text-sm font-semibold clay-btn-coral cursor-pointer whitespace-nowrap shrink-0"
             >
               Enquire Now
             </button>
@@ -408,35 +449,182 @@ export default function CurvedHeroFrame({
         </div>
       </header>
 
+      {/* MOBILE LEFT SLIDE-OUT DRAWER */}
+      {mobileDrawerOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile Navigation Menu"
+          className="fixed inset-0 z-[110] sm:hidden"
+        >
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/75 backdrop-blur-sm animate-fadeIn"
+            onClick={() => setMobileDrawerOpen(false)}
+          />
+
+          {/* Drawer Content Panel Sliding from Left */}
+          <aside className="fixed inset-y-0 left-0 w-[84vw] max-w-xs bg-[#131d11]/98 border-r border-[#97A87A]/35 text-[#FCF9EA] p-5 flex flex-col justify-between overflow-y-auto z-10 shadow-2xl animate-slideInLeft">
+            <div className="space-y-5">
+              {/* Top Drawer Header: Brand + Close Button */}
+              <div className="flex items-center justify-between pb-4 border-b border-[#A8BBA3]/25">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <img
+                    src="/Logo.png"
+                    alt="The Green Heritage Resort"
+                    className="h-10 w-auto object-contain shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <h3 className="font-serif font-bold text-xs text-[#FCF9EA] leading-tight truncate">
+                      The Green Heritage
+                    </h3>
+                    <p className="flex items-center gap-1 text-[10px] text-[#D4AF37] truncate">
+                      <MapPinCustomIcon className="w-2.5 h-2.5 shrink-0" />
+                      <span className="truncate">Bakarpur, Muzaffarpur</span>
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setMobileDrawerOpen(false)}
+                  aria-label="Close Navigation"
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-[#FCF9EA] flex items-center justify-center transition-colors cursor-pointer shrink-0"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Navigation Links */}
+              <nav className="space-y-1" aria-label="Mobile Menu Links">
+                {[
+                  { id: 'home', label: 'Home Resort', icon: HomePalaceIcon },
+                  { id: 'weddings', label: 'Weddings & Celebrations', icon: WeddingRingsIcon },
+                  { id: 'packages', label: 'Celebration Packages', icon: Gift },
+                  { id: 'gallery', label: 'Wedding Reels & Films', icon: GalleryReelIcon },
+                  { id: 'facilities', label: 'Banquet & Lawn Spaces', icon: BanquetArchIcon },
+                  { id: 'contact', label: 'Location & Google Maps', icon: MapPinCustomIcon },
+                ].map((item) => {
+                  const isActive = activePage === item.id;
+                  const Icon = item.icon;
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => {
+                        onNavigate(item.id as ActivePageView);
+                        setMobileDrawerOpen(false);
+                      }}
+                      className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-medium text-left transition-all cursor-pointer ${
+                        isActive
+                          ? 'clay-pill-active font-semibold shadow-md'
+                          : 'text-[#FCF9EA]/90 hover:text-white hover:bg-white/10'
+                      }`}
+                    >
+                      <Icon className="w-4 h-4 shrink-0 text-[#D4AF37]" />
+                      <span className="flex-1">{item.label}</span>
+                      <ChevronRight className="w-3.5 h-3.5 opacity-50" />
+                    </button>
+                  );
+                })}
+              </nav>
+
+              {/* Quick Info Badge */}
+              <div className="clay-surface rounded-2xl p-3 text-[11px] text-[#1E261A] bg-[#FCF9EA] border border-[#97A87A]/35">
+                <span className="font-semibold block text-[#3B543F]">
+                  Venue Desk Open Daily
+                </span>
+                <span className="text-[#46563D] block text-[10px] mt-0.5">
+                  Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur
+                </span>
+              </div>
+            </div>
+
+            {/* Bottom Actions inside Drawer */}
+            <div className="pt-4 border-t border-[#A8BBA3]/25 space-y-2.5">
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileDrawerOpen(false);
+                  onOpenEnquiry('Wedding / Reception');
+                }}
+                className="w-full py-2.5 rounded-full text-xs font-semibold clay-btn-coral flex items-center justify-center gap-2 cursor-pointer shadow-md"
+              >
+                <WeddingRingsIcon className="w-3.5 h-3.5" />
+                <span>Enquire for Your Dates</span>
+              </button>
+
+              <div className="grid grid-cols-2 gap-2">
+                <a
+                  href="tel:+919234052600"
+                  className="py-2 px-3 rounded-full bg-white/10 hover:bg-white/20 text-[#FCF9EA] text-[11px] font-medium flex items-center justify-center gap-1.5 transition-colors"
+                >
+                  <PhoneCallCustomIcon className="w-3.5 h-3.5 text-[#FFA239]" />
+                  <span>Call Us</span>
+                </a>
+                <a
+                  href="https://wa.me/919234052600?text=Hello%20The%20Green%20Heritage%20Resort%20and%20Banquet%2C%20I%20would%20like%20to%20enquire%20about%20dates."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2 px-3 rounded-full bg-emerald-800/60 hover:bg-emerald-700/70 text-emerald-100 text-[11px] font-medium flex items-center justify-center gap-1.5 transition-colors"
+                >
+                  <WhatsAppCustomIcon className="w-3.5 h-3.5 text-emerald-300" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+
+              {onOpenShare && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileDrawerOpen(false);
+                    onOpenShare();
+                  }}
+                  className="w-full py-1.5 text-center text-[11px] text-[#A8BBA3] hover:text-[#FCF9EA] transition-colors cursor-pointer"
+                >
+                  Share &amp; View Link Preview →
+                </button>
+              )}
+            </div>
+          </aside>
+        </div>
+      )}
+
       {/* Spacer for non-home pages aligned to header height */}
       {activePage !== 'home' && <div className="h-16 sm:h-20" />}
 
-      {/* FULL-SCREEN HERO SECTION ALIGNED TO HEADER + POST-HERO MOVING TEXT RIBBON */}
+      {/* FULL-SCREEN HERO SECTION ALIGNED TO HEADER */}
       {activePage === 'home' && (
         <>
           <section className="relative w-full h-[100dvh] min-h-[620px] flex flex-col items-center justify-center overflow-hidden pt-16 sm:pt-20 pb-8 select-none bg-black">
-            {/* FULL-SCREEN SEAMLESS LOOPING HERO VIDEO (1. DVwj-NrE08f landscape -> 2. DYDC4t6T_gq landscape) + SUBTLE NON-BLUR SIDE EDGE FADES */}
+            {/* FULL-SCREEN SEAMLESS LOOPING HERO VIDEO */}
             <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-black">
-              {HERO_BACKGROUND_REELS.map((bgReel, idx) => (
-                <video
-                  key={bgReel.code}
-                  ref={(el) => {
-                    bgVideoRefs.current[idx] = el;
-                  }}
-                  src={bgReel.videoSrc}
-                  poster={bgReel.poster}
-                  muted
-                  playsInline
-                  autoPlay={idx === bgIndex}
-                  preload="auto"
-                  onTimeUpdate={idx === bgIndex ? handleTimeUpdate : undefined}
-                  onEnded={idx === bgIndex ? advanceToNextHeroVideo : undefined}
-                  className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-in-out [backface-visibility:hidden] ${
-                    idx === bgIndex ? 'opacity-100' : 'opacity-0'
-                  }`}
-                  style={{ objectPosition: bgReel.objectPosition || '50% 50%' }}
-                />
-              ))}
+              {HERO_BACKGROUND_REELS.map((bgReel, idx) => {
+                const videoSource =
+                  isMobile && bgReel.mobileVideoSrc
+                    ? bgReel.mobileVideoSrc
+                    : bgReel.videoSrc;
+                return (
+                  <video
+                    key={bgReel.code}
+                    ref={(el) => {
+                      bgVideoRefs.current[idx] = el;
+                    }}
+                    src={videoSource}
+                    poster={bgReel.poster}
+                    muted
+                    playsInline
+                    autoPlay={idx === bgIndex}
+                    preload="metadata"
+                    onTimeUpdate={idx === bgIndex ? handleTimeUpdate : undefined}
+                    onEnded={idx === bgIndex ? advanceToNextHeroVideo : undefined}
+                    className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-in-out [backface-visibility:hidden] ${
+                      idx === bgIndex ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    style={{ objectPosition: bgReel.objectPosition || '50% 50%' }}
+                  />
+                );
+              })}
 
               {/* Subtle Non-Blur Black Fade on Left Side Edge */}
               <div className="absolute inset-y-0 left-0 w-4 sm:w-6 lg:w-8 bg-gradient-to-r from-black/45 via-black/10 to-transparent" />
@@ -444,7 +632,7 @@ export default function CurvedHeroFrame({
               {/* Subtle Non-Blur Black Fade on Right Side Edge */}
               <div className="absolute inset-y-0 right-0 w-4 sm:w-6 lg:w-8 bg-gradient-to-l from-black/45 via-black/10 to-transparent" />
 
-              {/* Balanced Darkening Scrim: Makes Background Video Slightly Dark for Crisp Text Contrast While Keeping Video Clearly Visible */}
+              {/* Balanced Darkening Scrim */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/60" />
             </div>
 
@@ -475,12 +663,18 @@ export default function CurvedHeroFrame({
                 warmth and peace of mind.
               </p>
 
-              {/* Palette Claymorphic Hero CTA Buttons */}
-              <div className="mt-7 sm:mt-8 flex flex-wrap items-center justify-center gap-4">
+              {/* Palette Claymorphic Hero CTA Buttons (Hidden when enquiry modal is open) */}
+              <div
+                className={`mt-7 sm:mt-8 flex flex-wrap items-center justify-center gap-4 transition-all duration-300 ${
+                  isEnquiryModalOpen
+                    ? 'opacity-0 pointer-events-none scale-95'
+                    : 'opacity-100 scale-100'
+                }`}
+              >
                 <button
                   type="button"
                   onClick={() => onOpenEnquiry('Wedding / Reception')}
-                  className="px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold clay-btn-coral inline-flex items-center gap-2.5 cursor-pointer"
+                  className="px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold clay-btn-coral inline-flex items-center gap-2.5 cursor-pointer shadow-lg"
                 >
                   <WeddingRingsIcon className="w-4 h-4" />
                   <span>Enquire for Your Dates</span>
@@ -496,7 +690,7 @@ export default function CurvedHeroFrame({
                       onNavigate('packages');
                     }
                   }}
-                  className="px-6 py-3.5 rounded-full text-sm sm:text-base font-semibold clay-btn-olive inline-flex items-center gap-2.5 cursor-pointer"
+                  className="px-6 py-3.5 rounded-full text-sm sm:text-base font-semibold clay-btn-olive inline-flex items-center gap-2.5 cursor-pointer shadow-lg"
                 >
                   <Gift className="w-4 h-4" />
                   <span>Explore Packages</span>
