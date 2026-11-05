@@ -102,8 +102,8 @@ export default function ScrollTrailUpButton({
               <span
                 className={`block rounded-full transition-all duration-300 ease-out ${
                   isActive
-                    ? 'w-7 h-[2px] bg-[#E00000]'
-                    : 'w-3.5 h-[1.5px] bg-[#9FED72]/85 group-hover:w-5 group-hover:bg-[#E00000]'
+                    ? 'w-7 h-[2.5px] bg-[#0F3B1A]'
+                    : 'w-3.5 h-[1.5px] bg-[#0F3B1A]/40 group-hover:w-5 group-hover:bg-[#0F3B1A]'
                 }`}
               />
             </button>

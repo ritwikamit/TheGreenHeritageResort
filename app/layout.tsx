@@ -28,8 +28,16 @@ const parisienne = Parisienne({
   display: 'swap',
 });
 
+const siteBaseUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : 'https://thegreenheritageresort.in';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://thegreenheritageresort.in'),
+  metadataBase: new URL(siteBaseUrl),
   title:
     'The Green Heritage Resort and Banquet | Weddings, Lawn & Stays in Muzaffarpur',
   description:
@@ -43,7 +51,7 @@ export const metadata: Metadata = {
     'Resort and hotel in Muzaffarpur',
   ],
   alternates: {
-    canonical: 'https://thegreenheritageresort.in',
+    canonical: siteBaseUrl,
   },
   icons: {
     icon: '/Logo.png',
@@ -54,7 +62,7 @@ export const metadata: Metadata = {
       'The Green Heritage Resort and Banquet — Weddings & Celebrations in Muzaffarpur',
     description:
       'Where families come together for sacred vows, joyful receptions, and peaceful stays in Bakarpur, Muzaffarpur, Bihar.',
-    url: 'https://thegreenheritageresort.in',
+    url: siteBaseUrl,
     type: 'website',
     siteName: 'The Green Heritage Resort and Banquet',
     locale: 'en_IN',
@@ -160,6 +168,16 @@ export default function RootLayout({
       className={`${plusJakarta.variable} ${cormorant.variable} ${parisienne.variable} overflow-x-clip [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]`}
     >
       <head>
+        {/* Dynamic & Absolute Open Graph / Social Link Preview Meta Tags */}
+        <meta property="og:image" content={`${siteBaseUrl}/og-image.jpg`} />
+        <meta property="og:image:secure_url" content={`${siteBaseUrl}/og-image.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="The Green Heritage Resort and Banquet — Weddings, Lawn & Stays in Muzaffarpur" />
+        <meta name="twitter:image" content={`${siteBaseUrl}/og-image.jpg`} />
+        <meta name="twitter:card" content="summary_large_image" />
+
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -202,15 +220,15 @@ export default function RootLayout({
                   -9px -9px 22px rgba(255, 255, 255, 0.98);
               }
 
-              /* Neumorphic Header & Floating Bar */
+              /* Neumorphic Header & Floating Bar (Refined: Zero Harsh White Glow) */
               .clay-white-header, .neu-header {
                 background: rgba(255, 236, 203, 0.92);
                 backdrop-filter: blur(14px) !important;
                 -webkit-backdrop-filter: blur(14px) !important;
-                border: 1px solid rgba(255, 255, 255, 0.85);
+                border: 1px solid rgba(197, 160, 114, 0.35);
                 box-shadow:
-                  8px 8px 22px rgba(197, 160, 114, 0.38),
-                  -6px -6px 16px rgba(255, 255, 255, 0.95);
+                  0 8px 22px rgba(197, 160, 114, 0.32),
+                  0 2px 6px rgba(0, 0, 0, 0.05);
               }
 
               /* Neumorphic Debossed / Inset Well (Surfaces, Containers, Wells) */
@@ -223,14 +241,14 @@ export default function RootLayout({
                   inset -4px -4px 9px rgba(255, 255, 255, 0.92);
               }
 
-              /* Primary Neumorphic Button: Vibrant Crimson Red (#E00000) */
+              /* Primary Neumorphic Button: Vibrant Crimson Red (#E00000) - No White Glow */
               .clay-btn-coral, .neu-btn-crimson {
                 background: linear-gradient(145deg, #FF1A1A, #C80000);
                 color: #FFFFFF !important;
-                border: 1px solid rgba(255, 200, 200, 0.45);
+                border: 1px solid rgba(255, 200, 200, 0.30);
                 box-shadow:
-                  6px 6px 16px rgba(224, 0, 0, 0.36),
-                  -4px -4px 12px rgba(255, 255, 255, 0.90);
+                  0 6px 16px rgba(224, 0, 0, 0.36),
+                  0 2px 4px rgba(0, 0, 0, 0.12);
                 transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease;
               }
               .clay-btn-coral:hover, .neu-btn-crimson:hover {
@@ -238,24 +256,24 @@ export default function RootLayout({
                 color: #FFFFFF !important;
                 transform: translateY(-2px);
                 box-shadow:
-                  8px 8px 22px rgba(224, 0, 0, 0.46),
-                  -5px -5px 14px rgba(255, 255, 255, 0.98);
+                  0 8px 22px rgba(224, 0, 0, 0.46),
+                  0 3px 6px rgba(0, 0, 0, 0.18);
               }
               .clay-btn-coral:active, .neu-btn-crimson:active {
                 transform: translateY(1px);
                 box-shadow:
                   inset 3px 3px 7px rgba(120, 0, 0, 0.60),
-                  inset -3px -3px 7px rgba(255, 120, 120, 0.35);
+                  inset -2px -2px 5px rgba(255, 120, 120, 0.30);
               }
 
-              /* Secondary Neumorphic Button: Lush Foliage Green (#9FED72 + Logo Deep Green) */
+              /* Secondary Neumorphic Button: Lush Foliage Green (#9FED72) - No White Glow */
               .clay-btn-olive, .neu-btn-foliage {
                 background: linear-gradient(145deg, #B2F588, #8CE65B);
                 color: #05260A !important;
-                border: 1px solid rgba(255, 255, 255, 0.85);
+                border: 1px solid rgba(255, 255, 255, 0.40);
                 box-shadow:
-                  6px 6px 16px rgba(140, 230, 91, 0.40),
-                  -4px -4px 12px rgba(255, 255, 255, 0.90);
+                  0 6px 16px rgba(140, 230, 91, 0.38),
+                  0 2px 4px rgba(0, 0, 0, 0.10);
                 transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease;
               }
               .clay-btn-olive:hover, .neu-btn-foliage:hover {
@@ -263,39 +281,39 @@ export default function RootLayout({
                 color: #021C06 !important;
                 transform: translateY(-2px);
                 box-shadow:
-                  8px 8px 20px rgba(140, 230, 91, 0.50),
-                  -5px -5px 14px rgba(255, 255, 255, 0.95);
+                  0 8px 20px rgba(140, 230, 91, 0.48),
+                  0 3px 6px rgba(0, 0, 0, 0.16);
               }
               .clay-btn-olive:active, .neu-btn-foliage:active {
                 transform: translateY(1px);
                 box-shadow:
                   inset 3px 3px 7px rgba(50, 130, 20, 0.50),
-                  inset -3px -3px 7px rgba(255, 255, 255, 0.70);
+                  inset -2px -2px 5px rgba(255, 255, 255, 0.40);
               }
 
-              /* Soft Cream Neumorphic Button (Secondary / Cancel / Outline) */
+              /* Soft Cream Neumorphic Button (Secondary / Cancel / Outline) - No White Glow */
               .clay-btn-soft, .neu-btn-soft {
                 background: #FFECCB;
                 color: #0F3B1A !important;
-                border: 1px solid rgba(255, 255, 255, 0.85);
+                border: 1px solid rgba(197, 160, 114, 0.45);
                 box-shadow:
-                  5px 5px 14px rgba(197, 160, 114, 0.40),
-                  -5px -5px 14px rgba(255, 255, 255, 0.95);
+                  0 4px 12px rgba(197, 160, 114, 0.35),
+                  0 2px 4px rgba(0, 0, 0, 0.08);
                 transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease;
               }
               .clay-btn-soft:hover, .neu-btn-soft:hover {
                 background: linear-gradient(145deg, #FFF5E3, #F6DFC1);
-                color: #E00000 !important;
+                color: #0F3B1A !important;
                 transform: translateY(-1px);
                 box-shadow:
-                  7px 7px 18px rgba(197, 160, 114, 0.48),
-                  -6px -6px 16px rgba(255, 255, 255, 0.98);
+                  0 6px 16px rgba(197, 160, 114, 0.45),
+                  0 3px 6px rgba(0, 0, 0, 0.12);
               }
               .clay-btn-soft:active, .neu-btn-soft:active {
                 transform: translateY(1px);
                 box-shadow:
                   inset 3px 3px 7px rgba(197, 160, 114, 0.45),
-                  inset -3px -3px 7px rgba(255, 255, 255, 0.90);
+                  inset -2px -2px 5px rgba(255, 255, 255, 0.60);
               }
 
               /* Neumorphic Active Debossed Pill */
@@ -305,12 +323,80 @@ export default function RootLayout({
                 font-weight: 700;
                 border: 1px solid rgba(15, 59, 26, 0.28);
                 box-shadow:
-                  inset 4px 4px 8px rgba(197, 160, 114, 0.45),
-                  inset -4px -4px 8px rgba(255, 255, 255, 0.95),
-                  0 1px 2px rgba(15, 59, 26, 0.10);
+                  inset 3px 3px 6px rgba(197, 160, 114, 0.45),
+                  inset -2px -2px 5px rgba(255, 255, 255, 0.65);
               }
 
-              /* Neumorphic Header Specific Non-Red Styling */
+              /* Dedicated Hero CTA Buttons: Built for dark video backgrounds (Zero White Glow) */
+              .hero-btn-primary {
+                background: linear-gradient(145deg, #FF1A1A, #C80000);
+                color: #FFFFFF !important;
+                border: 1px solid rgba(255, 200, 200, 0.25);
+                box-shadow:
+                  0 10px 24px rgba(0, 0, 0, 0.60),
+                  0 3px 8px rgba(200, 0, 0, 0.40);
+                transition: transform 0.22s ease, box-shadow 0.22s ease;
+              }
+              .hero-btn-primary:hover {
+                background: linear-gradient(145deg, #FF3333, #B80000);
+                transform: translateY(-2px);
+                box-shadow:
+                  0 14px 28px rgba(0, 0, 0, 0.70),
+                  0 4px 12px rgba(200, 0, 0, 0.50);
+              }
+              .hero-btn-primary:active {
+                transform: translateY(1px);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.50);
+              }
+
+              .hero-btn-secondary {
+                background: linear-gradient(145deg, #B2F588, #7CDA4A);
+                color: #05260A !important;
+                border: 1px solid rgba(255, 255, 255, 0.30);
+                box-shadow:
+                  0 10px 24px rgba(0, 0, 0, 0.60),
+                  0 3px 8px rgba(124, 218, 74, 0.35);
+                transition: transform 0.22s ease, box-shadow 0.22s ease;
+              }
+              .hero-btn-secondary:hover {
+                background: linear-gradient(145deg, #BFF89A, #6ECF3B);
+                transform: translateY(-2px);
+                box-shadow:
+                  0 14px 28px rgba(0, 0, 0, 0.70),
+                  0 4px 12px rgba(124, 218, 74, 0.45);
+              }
+              .hero-btn-secondary:active {
+                transform: translateY(1px);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.50);
+              }
+
+              /* Smartphone Bottom Quick Bar (Zero White Glow) */
+              .neu-bottom-nav {
+                background: rgba(255, 236, 203, 0.96);
+                backdrop-filter: blur(16px) !important;
+                -webkit-backdrop-filter: blur(16px) !important;
+                border: 1px solid rgba(197, 160, 114, 0.40);
+                box-shadow:
+                  0 12px 30px rgba(15, 59, 26, 0.20),
+                  0 3px 10px rgba(0, 0, 0, 0.10);
+              }
+              .neu-bottom-enquire {
+                background: linear-gradient(145deg, #0F3B1A, #185226);
+                color: #FFECCB !important;
+                border: 1px solid rgba(212, 175, 55, 0.45);
+                box-shadow: 0 4px 12px rgba(15, 59, 26, 0.35);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+              }
+              .neu-bottom-enquire:hover {
+                background: linear-gradient(145deg, #134B21, #1E6630);
+                color: #FFFFFF !important;
+              }
+              .neu-bottom-enquire:active {
+                transform: translateY(1px);
+                box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.6);
+              }
+
+              /* Neumorphic Header Specific Non-Red Styling - No White Glow */
               .neu-header-pill-active {
                 background: #F4DEC0;
                 color: #0F3B1A !important;
@@ -318,36 +404,36 @@ export default function RootLayout({
                 border: 1px solid rgba(15, 59, 26, 0.28);
                 box-shadow:
                   inset 3px 3px 6px rgba(197, 160, 114, 0.50),
-                  inset -3px -3px 6px rgba(255, 255, 255, 0.95);
+                  inset -2px -2px 5px rgba(255, 255, 255, 0.65);
               }
               .neu-btn-header-call {
                 background: linear-gradient(145deg, #FFB48E, #F29562);
                 color: #0A2B09 !important;
-                border: 1px solid rgba(255, 255, 255, 0.85);
+                border: 1px solid rgba(255, 255, 255, 0.50);
                 box-shadow:
-                  4px 4px 12px rgba(242, 149, 98, 0.38),
-                  -3px -3px 8px rgba(255, 255, 255, 0.90);
+                  0 4px 12px rgba(242, 149, 98, 0.38),
+                  0 2px 4px rgba(0, 0, 0, 0.10);
                 transition: transform 0.22s ease, box-shadow 0.22s ease;
               }
               .neu-btn-header-call:hover {
                 transform: translateY(-2px);
                 box-shadow:
-                  6px 6px 16px rgba(242, 149, 98, 0.48),
-                  -4px -4px 10px rgba(255, 255, 255, 0.98);
+                  0 6px 16px rgba(242, 149, 98, 0.48),
+                  0 3px 6px rgba(0, 0, 0, 0.14);
               }
               .neu-btn-header-call:active {
                 transform: translateY(1px);
                 box-shadow:
                   inset 2px 2px 5px rgba(180, 90, 40, 0.45),
-                  inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+                  inset -1px -1px 3px rgba(255, 255, 255, 0.5);
               }
               .neu-btn-header-enquire {
                 background: linear-gradient(145deg, #0F3B1A, #185226);
                 color: #FFECCB !important;
                 border: 1px solid rgba(212, 175, 55, 0.45);
                 box-shadow:
-                  5px 5px 15px rgba(15, 59, 26, 0.35),
-                  -3px -3px 10px rgba(255, 255, 255, 0.90);
+                  0 5px 15px rgba(15, 59, 26, 0.35),
+                  0 2px 4px rgba(0, 0, 0, 0.12);
                 transition: transform 0.22s ease, box-shadow 0.22s ease;
               }
               .neu-btn-header-enquire:hover {
@@ -355,24 +441,24 @@ export default function RootLayout({
                 color: #FFFFFF !important;
                 transform: translateY(-2px);
                 box-shadow:
-                  7px 7px 18px rgba(15, 59, 26, 0.45),
-                  -4px -4px 12px rgba(255, 255, 255, 0.98);
+                  0 7px 18px rgba(15, 59, 26, 0.45),
+                  0 3px 6px rgba(0, 0, 0, 0.16);
               }
               .neu-btn-header-enquire:active {
                 transform: translateY(1px);
                 box-shadow:
                   inset 3px 3px 6px rgba(5, 25, 10, 0.65),
-                  inset -2px -2px 5px rgba(255, 255, 255, 0.25);
+                  inset -1px -1px 3px rgba(255, 255, 255, 0.20);
               }
 
               /* Neumorphic Peach Accent Pill / Badge (#FFA97B) */
               .neu-badge-peach {
                 background: linear-gradient(145deg, #FFBA94, #F29562);
                 color: #0A2B09;
-                border: 1px solid rgba(255, 255, 255, 0.85);
+                border: 1px solid rgba(255, 255, 255, 0.60);
                 box-shadow:
-                  4px 4px 10px rgba(242, 149, 98, 0.35),
-                  -3px -3px 8px rgba(255, 255, 255, 0.85);
+                  0 4px 10px rgba(242, 149, 98, 0.35),
+                  0 2px 4px rgba(0, 0, 0, 0.08);
               }
 
               /* Neumorphic Inset Input Well */
@@ -382,34 +468,35 @@ export default function RootLayout({
                 border-radius: 18px;
                 border: 1px solid rgba(217, 185, 138, 0.45);
                 box-shadow:
-                  inset 4px 4px 9px rgba(197, 160, 114, 0.42),
-                  inset -4px -4px 9px rgba(255, 255, 255, 0.95);
+                  inset 3px 3px 7px rgba(197, 160, 114, 0.42),
+                  inset -2px -2px 6px rgba(255, 255, 255, 0.70);
                 transition: border-color 0.2s ease, box-shadow 0.2s ease;
               }
               .clay-input:focus, .neu-input:focus {
                 outline: none;
-                border-color: #E00000;
+                border-color: #0F3B1A;
                 box-shadow:
-                  inset 4px 4px 9px rgba(197, 160, 114, 0.42),
-                  inset -4px -4px 9px rgba(255, 255, 255, 0.95),
-                  0 0 0 3px rgba(224, 0, 0, 0.18);
+                  inset 3px 3px 7px rgba(197, 160, 114, 0.42),
+                  inset -2px -2px 6px rgba(255, 255, 255, 0.70),
+                  0 0 0 3px rgba(15, 59, 26, 0.18);
               }
 
-              /* Neumorphic Scroll-Up Button */
+              /* Neumorphic Scroll-Up Button - Zero White Glow */
               .clay-scroll-up-btn, .neu-scroll-btn {
-                background: linear-gradient(145deg, #FF1A1A, #C80000);
-                color: #FFFFFF !important;
-                border: 1px solid rgba(255, 200, 200, 0.50);
+                background: linear-gradient(145deg, #0F3B1A, #185226);
+                color: #FFECCB !important;
+                border: 1px solid rgba(212, 175, 55, 0.40);
                 box-shadow:
-                  6px 6px 16px rgba(224, 0, 0, 0.42),
-                  -4px -4px 12px rgba(255, 255, 255, 0.90);
+                  0 8px 22px rgba(15, 59, 26, 0.45),
+                  0 2px 6px rgba(0, 0, 0, 0.25);
                 transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease;
               }
               .clay-scroll-up-btn:hover, .neu-scroll-btn:hover {
+                background: linear-gradient(145deg, #134B21, #1E6630);
                 transform: translateY(-2px) scale(1.05);
                 box-shadow:
-                  8px 8px 22px rgba(224, 0, 0, 0.52),
-                  -5px -5px 14px rgba(255, 255, 255, 0.98);
+                  0 12px 28px rgba(15, 59, 26, 0.55),
+                  0 4px 10px rgba(0, 0, 0, 0.30);
               }
 
               /* Dark Neumorphic Elements: Deep Forest Green (#07190A / #0D2611 family) */

@@ -625,7 +625,7 @@ export default function ResortWebsiteSections({
           {/* 4. DEDICATED INTERACTIVE MAP & LOCATION SECTION ON LANDING PAGE (NO CALL OR WHATSAPP ICONS) */}
           <section id="map-location-section" className="scroll-mt-24">
             <div className="clay-card p-6 sm:p-8 lg:p-10">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                 <div className="lg:col-span-5 space-y-5">
                   <div>
                     <p className="font-cursive text-3xl sm:text-4xl text-[#D4AF37]">
@@ -633,40 +633,76 @@ export default function ResortWebsiteSections({
                     </p>
                     <BlurRevealText
                       as="h2"
-                      className="font-serif text-3xl sm:text-4xl font-bold text-[#0F3B1A] tracking-tight"
+                      className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F3B1A] tracking-tight leading-tight"
                     >
-                      Easy to Reach for Every Guest
+                      A Peaceful Haven, Easy to Reach for Every Guest
                     </BlurRevealText>
                   </div>
 
                   <p className="text-sm sm:text-base text-[#2C4631] leading-relaxed">
-                    We are located on{' '}
-                    <strong className="text-[#0F3B1A]">
-                      Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur, Bihar 844127
-                    </strong>
-                    . Bring your parents and family for a relaxed walkthrough of the
-                    lawn, banquet hall, and rooms before you choose your dates.
+                    Situated along Gobarsahi–Sakri Road in Bakarpur, The Green Heritage
+                    Resort welcomes wedding parties with wide private approach roads,
+                    serene landscaped lawns, and secure parking for 200+ vehicles.
                   </p>
 
-                  <div className="clay-surface rounded-2xl p-4 flex items-start gap-3 text-xs sm:text-sm text-[#0F3B1A]">
-                    <MapPinCustomIcon className="w-5 h-5 text-[#165A20] shrink-0 mt-0.5" />
+                  {/* 3 Transit & Landmark Pills */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+                    <div className="clay-surface rounded-2xl p-3 text-center">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#165A20] block">
+                        Gobarsahi Chowk
+                      </span>
+                      <span className="font-serif font-bold text-sm text-[#0F3B1A] block mt-0.5">
+                        ~8–10 Mins
+                      </span>
+                      <span className="text-[10px] text-[#2C4631] block">Direct highway road</span>
+                    </div>
+
+                    <div className="clay-surface rounded-2xl p-3 text-center">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#165A20] block">
+                        MFP Railway Stn
+                      </span>
+                      <span className="font-serif font-bold text-sm text-[#0F3B1A] block mt-0.5">
+                        ~20 Mins
+                      </span>
+                      <span className="text-[10px] text-[#2C4631] block">Muzaffarpur Jct</span>
+                    </div>
+
+                    <div className="clay-surface rounded-2xl p-3 text-center">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#165A20] block">
+                        Guest Parking
+                      </span>
+                      <span className="font-serif font-bold text-sm text-[#0F3B1A] block mt-0.5">
+                        200+ Cars
+                      </span>
+                      <span className="text-[10px] text-[#2C4631] block">Secure on-site lot</span>
+                    </div>
+                  </div>
+
+                  {/* Address Badge with GPS Coordinates */}
+                  <div className="clay-surface rounded-2xl p-4 flex items-start gap-3.5 text-xs sm:text-sm text-[#0F3B1A] border border-[#0F3B1A]/10">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0F3B1A] to-[#185226] text-[#FFECCB] flex items-center justify-center shrink-0 shadow-sm">
+                      <MapPinCustomIcon className="w-5 h-5 text-[#D4AF37]" />
+                    </div>
                     <div>
-                      <span className="font-semibold block">
+                      <span className="font-serif font-bold text-sm sm:text-base text-[#0F3B1A] block">
                         The Green Heritage Resort and Banquet
                       </span>
-                      <span className="text-[#2C4631]">
+                      <span className="text-[#2C4631] block mt-0.5 leading-snug">
                         Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur, Bihar 844127
+                      </span>
+                      <span className="text-[11px] font-mono text-[#165A20] block mt-1">
+                        GPS Coordinates: 26.06385° N, 85.35049° E
                       </span>
                     </div>
                   </div>
 
-                  {/* Action Buttons: Google Maps + Plan a Family Visit Modal */}
-                  <div className="flex flex-wrap items-center gap-3 pt-1">
+                  {/* Action Buttons (Zero White Glow) */}
+                  <div className="flex flex-wrap items-center gap-3 pt-2">
                     <a
                       href="https://www.google.com/maps/place/The+Green+Heritage+Resort+and+Banquet/@26.06385,85.3504979,17z/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-5 py-3 rounded-full text-xs sm:text-sm font-semibold clay-btn-olive inline-flex items-center gap-2"
+                      className="px-5 py-3 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#9FED72] to-[#7CDA4A] text-[#05260A] shadow-[0_4px_14px_rgba(140,230,91,0.38)] hover:scale-105 active:scale-95 transition-all inline-flex items-center gap-2 cursor-pointer"
                     >
                       <GoogleMapsBrandIcon className="w-4 h-4" />
                       <span>Get Directions on Maps</span>
@@ -675,23 +711,37 @@ export default function ResortWebsiteSections({
                     <button
                       type="button"
                       onClick={() => onOpenEnquiry('Site Visit / Venue Tour')}
-                      className="px-5 py-3 rounded-full text-xs sm:text-sm font-semibold clay-btn-coral cursor-pointer"
+                      className="px-5 py-3 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#0F3B1A] to-[#185226] text-[#FFECCB] border border-[#D4AF37]/45 shadow-[0_4px_14px_rgba(15,59,26,0.35)] hover:brightness-110 active:scale-95 transition-all cursor-pointer"
                     >
-                      Plan a Family Visit
+                      Plan a Family Walkthrough
                     </button>
                   </div>
                 </div>
 
-                {/* Interactive Google Map Embed 100% filling its Claymorphic Frame */}
+                {/* Luxury Interactive Google Map Embed in Physical Bezel Chassis */}
                 <div className="lg:col-span-7">
-                  <div className="clay-card p-0 overflow-hidden h-[330px] sm:h-[390px]">
-                    <iframe
-                      title="The Green Heritage Resort and Banquet Map"
-                      src="https://maps.google.com/maps?q=26.06385,85.3504979&hl=en&z=16&output=embed"
-                      className="w-full h-full border-0"
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    />
+                  <div className="relative p-2.5 sm:p-3.5 bg-[#FFECCB] rounded-[32px] border border-white/80 shadow-[10px_10px_24px_rgba(197,160,114,0.42),-6px_-6px_18px_rgba(255,255,255,0.92)]">
+                    <div className="relative h-[340px] sm:h-[440px] rounded-[22px] overflow-hidden shadow-[inset_3px_3px_8px_rgba(0,0,0,0.45),inset_-2px_-2px_6px_rgba(255,255,255,0.25)] border border-[#0F3B1A]/20 bg-[#07190A]">
+                      {/* Floating Live Map Pin Indicator */}
+                      <div className="absolute top-3.5 left-3.5 z-10 bg-[#071E0B]/92 backdrop-blur-md text-[#FFECCB] px-3.5 py-1.5 rounded-full border border-[#D4AF37]/45 shadow-lg flex items-center gap-2 select-none pointer-events-none">
+                        <span className="relative flex h-2.5 w-2.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#9FED72] opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#9FED72]"></span>
+                        </span>
+                        <span className="text-[11px] font-semibold tracking-wide">
+                          The Green Heritage Resort • Live Map Pin
+                        </span>
+                      </div>
+
+                      {/* Google Maps iFrame */}
+                      <iframe
+                        title="The Green Heritage Resort and Banquet Map"
+                        src="https://maps.google.com/maps?q=26.06385,85.3504979&hl=en&z=16&output=embed"
+                        className="w-full h-full border-0 [filter:contrast(1.04)_brightness(0.98)]"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1126,13 +1176,24 @@ export default function ResortWebsiteSections({
               </div>
 
               <div className="lg:col-span-7">
-                <div className="clay-card p-0 overflow-hidden h-[380px]">
-                  <iframe
-                    title="The Green Heritage Resort and Banquet Location Map"
-                    src="https://maps.google.com/maps?q=26.06385,85.3504979&hl=en&z=16&output=embed"
-                    className="w-full h-full border-0"
-                    loading="lazy"
-                  />
+                <div className="relative p-2.5 sm:p-3.5 bg-[#FFECCB] rounded-[32px] border border-white/80 shadow-[10px_10px_24px_rgba(197,160,114,0.42),-6px_-6px_18px_rgba(255,255,255,0.92)]">
+                  <div className="relative h-[380px] sm:h-[440px] rounded-[22px] overflow-hidden shadow-[inset_3px_3px_8px_rgba(0,0,0,0.45),inset_-2px_-2px_6px_rgba(255,255,255,0.25)] border border-[#0F3B1A]/20 bg-[#07190A]">
+                    <div className="absolute top-3.5 left-3.5 z-10 bg-[#071E0B]/92 backdrop-blur-md text-[#FFECCB] px-3.5 py-1.5 rounded-full border border-[#D4AF37]/45 shadow-lg flex items-center gap-2 select-none pointer-events-none">
+                      <span className="relative flex h-2.5 w-2.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#9FED72] opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#9FED72]"></span>
+                      </span>
+                      <span className="text-[11px] font-semibold tracking-wide">
+                        The Green Heritage Resort • Live Map Pin
+                      </span>
+                    </div>
+                    <iframe
+                      title="The Green Heritage Resort and Banquet Location Map"
+                      src="https://maps.google.com/maps?q=26.06385,85.3504979&hl=en&z=16&output=embed"
+                      className="w-full h-full border-0 [filter:contrast(1.04)_brightness(0.98)]"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

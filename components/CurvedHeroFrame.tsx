@@ -420,19 +420,8 @@ export default function CurvedHeroFrame({
             </div>
           </nav>
 
-          {/* Right: Neumorphic Call, Share & Enquire Now Buttons */}
-          <div className="flex items-center gap-1 sm:gap-2 lg:gap-2.5 shrink-0">
-            {onOpenShare && (
-              <button
-                type="button"
-                onClick={onOpenShare}
-                aria-label="Share Resort & View Link Preview"
-                title="Share & Link Preview"
-                className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full clay-white-header flex items-center justify-center text-[#0F3B1A] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all cursor-pointer"
-              >
-                <ShareCustomIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </button>
-            )}
+          {/* Right: Neumorphic Call & Enquire Now Buttons */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             <a
               href="tel:+919234052600"
               aria-label="Call The Green Heritage Resort and Banquet"
@@ -677,7 +666,7 @@ export default function CurvedHeroFrame({
                 <button
                   type="button"
                   onClick={() => onOpenEnquiry('Wedding / Reception')}
-                  className="px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold clay-btn-coral inline-flex items-center gap-2.5 cursor-pointer shadow-lg"
+                  className="px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold hero-btn-primary inline-flex items-center gap-2.5 cursor-pointer shadow-lg"
                 >
                   <WeddingRingsIcon className="w-4 h-4" />
                   <span>Enquire for Your Dates</span>
@@ -693,9 +682,9 @@ export default function CurvedHeroFrame({
                       onNavigate('packages');
                     }
                   }}
-                  className="px-6 py-3.5 rounded-full text-sm sm:text-base font-semibold clay-btn-olive inline-flex items-center gap-2.5 cursor-pointer shadow-lg"
+                  className="px-6 py-3.5 rounded-full text-sm sm:text-base font-semibold hero-btn-secondary inline-flex items-center gap-2.5 cursor-pointer shadow-lg"
                 >
-                  <Gift className="w-4 h-4" />
+                  <GiftCustomIcon className="w-4 h-4" />
                   <span>Explore Packages</span>
                 </button>
               </div>
