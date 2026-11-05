@@ -419,7 +419,7 @@ export const SUPPLIED_CHANNELS: DirectoryChannel[] = [
     id: 'google-maps',
     platform: 'Google Maps',
     handleOrLabel: 'Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur',
-    url: 'https://www.google.com/maps/place/The+Green+Heritage+Resort+and+Banquet/@26.06385,85.3504979,17z/',
+    url: 'https://www.google.com/maps/place/The+Green+Heritage+Resort+and+Banquet/@26.0638548,85.347923,713m/data=!3m2!1e3!4b1!4m9!3m8!1s0x39ed1724a0dfa55b:0x5737c356be2eaddb!5m2!4m1!1i2!8m2!3d26.06385!4d85.3504979!16s%2Fg%2F11kq2x_1j4?hl=en&entry=ttu&g_ep=EgoyMDI2MTEwMi4wIKXMDSoASAFQAw%3D%3D',
     category: 'Maps & Navigation',
     verificationNote: 'Open turn-by-turn directions to the venue.',
   },

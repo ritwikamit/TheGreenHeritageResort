@@ -691,7 +691,7 @@ export default function ResortWebsiteSections({
                         Bakarpur, Gobarsahi–Sakri Road, Muzaffarpur, Bihar 844127
                       </span>
                       <span className="text-[11px] font-mono text-[#165A20] block mt-1">
-                        GPS Coordinates: 26.06385° N, 85.35049° E
+                        GPS Coordinates: 26.06385° N, 85.35050° E
                       </span>
                     </div>
                   </div>
@@ -699,7 +699,7 @@ export default function ResortWebsiteSections({
                   {/* Action Buttons (Zero White Glow) */}
                   <div className="flex flex-wrap items-center gap-3 pt-2">
                     <a
-                      href="https://www.google.com/maps/place/The+Green+Heritage+Resort+and+Banquet/@26.06385,85.3504979,17z/"
+                      href="https://www.google.com/maps/place/The+Green+Heritage+Resort+and+Banquet/@26.0638548,85.347923,713m/data=!3m2!1e3!4b1!4m9!3m8!1s0x39ed1724a0dfa55b:0x5737c356be2eaddb!5m2!4m1!1i2!8m2!3d26.06385!4d85.3504979!16s%2Fg%2F11kq2x_1j4?hl=en&entry=ttu&g_ep=EgoyMDI2MTEwMi4wIKXMDSoASAFQAw%3D%3D"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-5 py-3 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#9FED72] to-[#7CDA4A] text-[#05260A] shadow-[0_4px_14px_rgba(140,230,91,0.38)] hover:scale-105 active:scale-95 transition-all inline-flex items-center gap-2 cursor-pointer"
@@ -736,7 +736,7 @@ export default function ResortWebsiteSections({
                       {/* Google Maps iFrame */}
                       <iframe
                         title="The Green Heritage Resort and Banquet Map"
-                        src="https://maps.google.com/maps?q=26.06385,85.3504979&hl=en&z=16&output=embed"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3588.665780512613!2d85.347923!3d26.0638548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed1724a0dfa55b%3A0x5737c356be2eaddb!2sThe%20Green%20Heritage%20Resort%20and%20Banquet!5e0!3m2!1sen!2sin!4v1730000000000!5m2!1sen!2sin"
                         className="w-full h-full border-0 [filter:contrast(1.04)_brightness(0.98)]"
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
@@ -1138,7 +1138,7 @@ export default function ResortWebsiteSections({
 
                 <div className="flex flex-wrap items-center gap-3 pt-2">
                   <a
-                    href="https://www.google.com/maps/place/The+Green+Heritage+Resort+and+Banquet/@26.06385,85.3504979,17z/"
+                    href="https://www.google.com/maps/place/The+Green+Heritage+Resort+and+Banquet/@26.0638548,85.347923,713m/data=!3m2!1e3!4b1!4m9!3m8!1s0x39ed1724a0dfa55b:0x5737c356be2eaddb!5m2!4m1!1i2!8m2!3d26.06385!4d85.3504979!16s%2Fg%2F11kq2x_1j4?hl=en&entry=ttu&g_ep=EgoyMDI2MTEwMi4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-5 py-3 rounded-full text-sm font-semibold clay-btn-olive inline-flex items-center gap-2"
@@ -1189,7 +1189,7 @@ export default function ResortWebsiteSections({
                     </div>
                     <iframe
                       title="The Green Heritage Resort and Banquet Location Map"
-                      src="https://maps.google.com/maps?q=26.06385,85.3504979&hl=en&z=16&output=embed"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3588.665780512613!2d85.347923!3d26.0638548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed1724a0dfa55b%3A0x5737c356be2eaddb!2sThe%20Green%20Heritage%20Resort%20and%20Banquet!5e0!3m2!1sen!2sin!4v1730000000000!5m2!1sen!2sin"
                       className="w-full h-full border-0 [filter:contrast(1.04)_brightness(0.98)]"
                       loading="lazy"
                     />
@@ -1642,7 +1642,7 @@ export default function ResortWebsiteSections({
                 </a>
 
                 <a
-                  href="https://www.google.com/maps/place/The+Green+Heritage+Resort+and+Banquet/@26.06385,85.3504979,17z/"
+                  href="https://www.google.com/maps/place/The+Green+Heritage+Resort+and+Banquet/@26.0638548,85.347923,713m/data=!3m2!1e3!4b1!4m9!3m8!1s0x39ed1724a0dfa55b:0x5737c356be2eaddb!5m2!4m1!1i2!8m2!3d26.06385!4d85.3504979!16s%2Fg%2F11kq2x_1j4?hl=en&entry=ttu&g_ep=EgoyMDI2MTEwMi4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Google Maps"
