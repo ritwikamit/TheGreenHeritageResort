@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronDown, ChevronRight, Compass, Gift, X } from 'lucide-react';
 import { HERO_BACKGROUND_REELS } from '@/lib/resort-data';
 import {
   BanquetArchIcon,
@@ -13,6 +12,10 @@ import {
   ShareCustomIcon,
   MenuCustomIcon,
   WhatsAppCustomIcon,
+  CloseCustomIcon,
+  ChevronDownCustomIcon,
+  ChevronRightCustomIcon,
+  GiftCustomIcon,
 } from './CustomHeritageIcons';
 
 export type ActivePageView =
@@ -231,7 +234,7 @@ export default function CurvedHeroFrame({
     {
       id: 'packages',
       label: 'Packages',
-      icon: <Gift className="w-4 h-4 shrink-0" />,
+      icon: <GiftCustomIcon className="w-4 h-4 shrink-0" />,
     },
     {
       id: 'gallery',
@@ -320,10 +323,10 @@ export default function CurvedHeroFrame({
                   className={`flex items-center gap-0.5 sm:gap-1 text-[10px] sm:text-xs truncate transition-colors ${
                     onDarkHero
                       ? 'text-[#FFA97B] drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]'
-                      : 'text-[#E00000]'
+                      : 'text-[#0F3B1A]/85 font-medium'
                   }`}
                 >
-                  <MapPinCustomIcon className="w-2.5 h-2.5 shrink-0" />
+                  <MapPinCustomIcon className={`w-2.5 h-2.5 shrink-0 ${onDarkHero ? 'text-[#FFA97B]' : 'text-[#D4AF37]'}`} />
                   <span className="truncate">Bakarpur, Muzaffarpur</span>
                 </span>
               </div>
@@ -347,10 +350,10 @@ export default function CurvedHeroFrame({
                   }}
                   className={`px-2.5 md:px-3 lg:px-4 py-1.5 rounded-full text-[11px] md:text-xs lg:text-sm font-medium transition-all cursor-pointer whitespace-nowrap ${
                     active
-                      ? 'clay-pill-active font-semibold'
+                      ? 'neu-header-pill-active font-bold'
                       : onDarkHero
                       ? 'text-[#FFECCB] hover:text-white hover:bg-white/15 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]'
-                      : 'text-[#0F3B1A] hover:text-[#E00000] hover:bg-white/40'
+                      : 'text-[#0F3B1A] hover:text-[#0A2B09] hover:bg-white/50'
                   }`}
                 >
                   {item.label}
@@ -366,14 +369,14 @@ export default function CurvedHeroFrame({
                 onClick={() => setMoreMenuOpen((prev) => !prev)}
                 className={`inline-flex items-center gap-1 px-2.5 md:px-3 lg:px-4 py-1.5 rounded-full text-[11px] md:text-xs lg:text-sm font-medium transition-all cursor-pointer whitespace-nowrap ${
                   activePage === 'contact' || moreMenuOpen
-                    ? 'clay-pill-active font-semibold'
+                    ? 'neu-header-pill-active font-bold'
                     : onDarkHero
                     ? 'text-[#FFECCB] hover:text-white hover:bg-white/15 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]'
-                    : 'text-[#0F3B1A] hover:text-[#E00000] hover:bg-white/40'
+                    : 'text-[#0F3B1A] hover:text-[#0A2B09] hover:bg-white/50'
                 }`}
               >
                 <span>More</span>
-                <ChevronDown
+                <ChevronDownCustomIcon
                   className={`w-3.5 h-3.5 transition-transform duration-200 ${
                     moreMenuOpen ? 'rotate-180' : ''
                   }`}
@@ -408,7 +411,7 @@ export default function CurvedHeroFrame({
                       setMoreMenuOpen(false);
                       onOpenEnquiry('Wedding / Reception');
                     }}
-                    className="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold text-[#FFFFFF] bg-[#E00000] hover:bg-[#C80000] transition-colors cursor-pointer mt-1 shadow-sm"
+                    className="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold text-[#FFECCB] bg-gradient-to-r from-[#0F3B1A] to-[#185226] hover:brightness-110 border border-[#D4AF37]/35 transition-colors cursor-pointer mt-1 shadow-sm"
                   >
                     Wedding Date Enquiry
                   </button>
@@ -425,7 +428,7 @@ export default function CurvedHeroFrame({
                 onClick={onOpenShare}
                 aria-label="Share Resort & View Link Preview"
                 title="Share & Link Preview"
-                className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full clay-white-header flex items-center justify-center text-[#0F3B1A] hover:text-[#E00000] hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full clay-white-header flex items-center justify-center text-[#0F3B1A] hover:text-[#D4AF37] hover:scale-105 active:scale-95 transition-all cursor-pointer"
               >
                 <ShareCustomIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
@@ -434,14 +437,14 @@ export default function CurvedHeroFrame({
               href="tel:+919234052600"
               aria-label="Call The Green Heritage Resort and Banquet"
               title="Call Resort"
-              className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full clay-btn-coral flex items-center justify-center shrink-0"
+              className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full neu-btn-header-call flex items-center justify-center shrink-0 cursor-pointer"
             >
               <PhoneCallCustomIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </a>
             <button
               type="button"
               onClick={() => onOpenEnquiry('Wedding / Reception')}
-              className="px-2.5 sm:px-4 lg:px-5 py-1.5 sm:py-2 lg:py-2.5 rounded-full text-[11px] sm:text-xs lg:text-sm font-semibold clay-btn-coral cursor-pointer whitespace-nowrap shrink-0"
+              className="px-2.5 sm:px-4 lg:px-5 py-1.5 sm:py-2 lg:py-2.5 rounded-full text-[11px] sm:text-xs lg:text-sm font-semibold neu-btn-header-enquire cursor-pointer whitespace-nowrap shrink-0"
             >
               Enquire Now
             </button>
@@ -491,7 +494,7 @@ export default function CurvedHeroFrame({
                   aria-label="Close Navigation"
                   className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-[#FFECCB] flex items-center justify-center transition-colors cursor-pointer shrink-0"
                 >
-                  <X className="w-4 h-4" />
+                  <CloseCustomIcon className="w-4 h-4" />
                 </button>
               </div>
 
@@ -500,7 +503,7 @@ export default function CurvedHeroFrame({
                 {[
                   { id: 'home', label: 'Home Resort', icon: HomePalaceIcon },
                   { id: 'weddings', label: 'Weddings & Celebrations', icon: WeddingRingsIcon },
-                  { id: 'packages', label: 'Celebration Packages', icon: Gift },
+                  { id: 'packages', label: 'Celebration Packages', icon: GiftCustomIcon },
                   { id: 'gallery', label: 'Wedding Reels & Films', icon: GalleryReelIcon },
                   { id: 'facilities', label: 'Banquet & Lawn Spaces', icon: BanquetArchIcon },
                   { id: 'contact', label: 'Location & Google Maps', icon: MapPinCustomIcon },
@@ -517,13 +520,13 @@ export default function CurvedHeroFrame({
                       }}
                       className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-medium text-left transition-all cursor-pointer ${
                         isActive
-                          ? 'clay-pill-active font-semibold shadow-md'
+                          ? 'bg-[#0F3B1A] text-[#FFECCB] font-bold border border-[#9FED72]/40 shadow-md'
                           : 'text-[#FFECCB]/90 hover:text-white hover:bg-white/10'
                       }`}
                     >
                       <Icon className="w-4 h-4 shrink-0 text-[#9FED72]" />
                       <span className="flex-1">{item.label}</span>
-                      <ChevronRight className="w-3.5 h-3.5 opacity-50" />
+                      <ChevronRightCustomIcon className="w-3.5 h-3.5 opacity-50" />
                     </button>
                   );
                 })}
@@ -548,7 +551,7 @@ export default function CurvedHeroFrame({
                   setMobileDrawerOpen(false);
                   onOpenEnquiry('Wedding / Reception');
                 }}
-                className="w-full py-2.5 rounded-full text-xs font-semibold clay-btn-coral flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                className="w-full py-2.5 rounded-full text-xs font-semibold neu-btn-header-enquire flex items-center justify-center gap-2 cursor-pointer shadow-md"
               >
                 <WeddingRingsIcon className="w-3.5 h-3.5" />
                 <span>Enquire for Your Dates</span>

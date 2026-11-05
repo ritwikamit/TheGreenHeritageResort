@@ -157,7 +157,7 @@ export default function InclinedScrollGallerySection({
     <section
       ref={sectionRef}
       id="inclined-gallery-section"
-      className="relative w-screen left-1/2 -translate-x-1/2 py-14 sm:py-20 overflow-hidden select-none"
+      className="relative w-screen left-1/2 -translate-x-1/2 py-14 sm:py-20 overflow-hidden select-none bg-[#000000] border-y border-white/10 shadow-[inset_0_12px_28px_rgba(0,0,0,0.9),inset_0_-12px_28px_rgba(0,0,0,0.9)]"
     >
       {/* Section Header */}
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -167,7 +167,7 @@ export default function InclinedScrollGallerySection({
           </p>
           <BlurRevealText
             as="h2"
-            className="font-serif text-3xl sm:text-5xl font-bold text-[#0F3B1A] tracking-tight"
+            className="font-serif text-3xl sm:text-5xl font-bold text-[#FFECCB] tracking-tight drop-shadow-md"
           >
             Moments That Stay in Your Heart Forever
           </BlurRevealText>
@@ -175,7 +175,7 @@ export default function InclinedScrollGallerySection({
         <button
           type="button"
           onClick={onOpenGallery}
-          className="self-start md:self-auto px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold clay-btn-olive cursor-pointer"
+          className="self-start md:self-auto px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#9FED72] to-[#7CDA4A] text-[#05260A] shadow-[4px_4px_14px_rgba(159,237,114,0.35),-2px_-2px_8px_rgba(255,255,255,0.12)] hover:scale-105 active:scale-95 transition-all cursor-pointer"
         >
           Explore Full Photo &amp; Reel Gallery →
         </button>
@@ -184,10 +184,10 @@ export default function InclinedScrollGallerySection({
       {/* Inclined Container: Top Ribbon + Two Inclined Moving Photo Rows + Bottom Ribbon */}
       <div className="relative -rotate-[2.2deg] scale-[1.03] space-y-5 py-3">
         {/* TOP MOVING TEXT RIBBON */}
-        <div className="w-full overflow-hidden clay-dark-bar py-2.5 border-y border-[#A8BBA3]/45">
+        <div className="w-full overflow-hidden bg-gradient-to-r from-[#071B0B] via-[#0D2B13] to-[#071B0B] py-2.5 border-y border-[#9FED72]/30 shadow-xl">
           <div
             ref={ribbonTopRef}
-            className="flex whitespace-nowrap will-change-transform text-xs sm:text-sm font-semibold tracking-[0.22em] text-[#FCF9EA]"
+            className="flex whitespace-nowrap will-change-transform text-xs sm:text-sm font-semibold tracking-[0.22em] text-[#FFECCB]"
           >
             {Array.from({ length: 6 }).map((_, i) => (
               <span key={i} className="mx-2">
@@ -207,7 +207,7 @@ export default function InclinedScrollGallerySection({
             {row1Photos.map((photo, idx) => (
               <div
                 key={`r1-${idx}`}
-                className="group relative w-[280px] sm:w-[350px] aspect-[16/10] clay-card p-0 overflow-hidden shrink-0 transition-transform duration-500 hover:scale-[1.04]"
+                className="group relative w-[280px] sm:w-[350px] aspect-[16/10] rounded-[22px] p-0 overflow-hidden shrink-0 border border-white/15 bg-[#0B0B0B] shadow-[0_8px_24px_rgba(0,0,0,0.85),inset_0_1px_2px_rgba(255,255,255,0.2)] transition-transform duration-500 hover:scale-[1.04]"
               >
                 <img
                   src={photo.src}
@@ -216,7 +216,7 @@ export default function InclinedScrollGallerySection({
                   decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                 <div className="absolute inset-x-4 bottom-3 pointer-events-none">
                   <h4 className="font-serif text-[#FCF9EA] text-sm sm:text-base font-semibold truncate">
                     {photo.title}
@@ -240,7 +240,7 @@ export default function InclinedScrollGallerySection({
             {row2Photos.map((photo, idx) => (
               <div
                 key={`r2-${idx}`}
-                className="group relative w-[280px] sm:w-[350px] aspect-[16/10] clay-card p-0 overflow-hidden shrink-0 transition-transform duration-500 hover:scale-[1.04]"
+                className="group relative w-[280px] sm:w-[350px] aspect-[16/10] rounded-[22px] p-0 overflow-hidden shrink-0 border border-white/15 bg-[#0B0B0B] shadow-[0_8px_24px_rgba(0,0,0,0.85),inset_0_1px_2px_rgba(255,255,255,0.2)] transition-transform duration-500 hover:scale-[1.04]"
               >
                 <img
                   src={photo.src}
@@ -249,7 +249,7 @@ export default function InclinedScrollGallerySection({
                   decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                 <div className="absolute inset-x-4 bottom-3 pointer-events-none">
                   <h4 className="font-serif text-[#FCF9EA] text-sm sm:text-base font-semibold truncate">
                     {photo.title}
@@ -264,7 +264,7 @@ export default function InclinedScrollGallerySection({
         </div>
 
         {/* BOTTOM MOVING TEXT RIBBON */}
-        <div className="w-full overflow-hidden bg-[#9FED72] py-2.5 border-y border-[#FFECCB]/80 shadow-md">
+        <div className="w-full overflow-hidden bg-[#9FED72] py-2.5 border-y border-[#FFECCB]/80 shadow-xl">
           <div
             ref={ribbonBottomRef}
             className="flex whitespace-nowrap will-change-transform text-xs sm:text-sm font-semibold tracking-[0.22em] text-[#05260A]"

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { CheckCircle2, Gift, Heart, Sparkles } from 'lucide-react';
 import {
   FOOTER_BACKGROUND_REEL,
   INITIAL_FACILITY_ITEMS,
@@ -32,6 +31,10 @@ import {
   WifiSignalIcon,
   ShareCustomIcon,
   LinkCustomIcon,
+  GiftCustomIcon,
+  HeartCustomIcon,
+  HeritageBloomIcon,
+  VerifiedCheckCustomIcon,
 } from './CustomHeritageIcons';
 
 interface ResortWebsiteSectionsProps {
@@ -280,7 +283,7 @@ export default function ResortWebsiteSections({
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
                     <div className="clay-surface rounded-2xl p-4 flex items-start gap-3">
                       <div className="w-9 h-9 rounded-xl clay-btn-soft flex items-center justify-center shrink-0 mt-0.5">
-                        <Heart className="w-4 h-4 text-[#E00000]" />
+                        <HeartCustomIcon className="w-4 h-4 text-[#0F3B1A]" />
                       </div>
                       <div>
                         <h3 className="font-serif font-bold text-base text-[#0F3B1A]">
@@ -295,7 +298,7 @@ export default function ResortWebsiteSections({
 
                     <div className="clay-surface rounded-2xl p-4 flex items-start gap-3">
                       <div className="w-9 h-9 rounded-xl clay-btn-soft flex items-center justify-center shrink-0 mt-0.5">
-                        <Sparkles className="w-4 h-4 text-[#E00000]" />
+                        <HeritageBloomIcon className="w-4 h-4 text-[#0F3B1A]" />
                       </div>
                       <div>
                         <h3 className="font-serif font-bold text-base text-[#0F3B1A]">
@@ -323,7 +326,7 @@ export default function ResortWebsiteSections({
                       onClick={() => onNavigate('packages')}
                       className="px-5 py-3.5 rounded-full text-xs sm:text-sm font-semibold clay-btn-olive inline-flex items-center gap-2 cursor-pointer"
                     >
-                      <Gift className="w-4 h-4" />
+                      <GiftCustomIcon className="w-4 h-4" />
                       <span>Explore Wedding Packages</span>
                     </button>
                   </div>
@@ -571,11 +574,11 @@ export default function ResortWebsiteSections({
                   <div>
                     <div className="flex items-center justify-between gap-3 mb-3">
                       <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold clay-surface text-[#165A20]">
-                        <Sparkles className="w-3.5 h-3.5 text-[#FFA97B]" />
+                        <HeritageBloomIcon className="w-3.5 h-3.5 text-[#FFA97B]" />
                         {pkg.tag}
                       </span>
                       <div className="w-10 h-10 rounded-2xl clay-btn-soft flex items-center justify-center shrink-0">
-                        <Gift className="w-5 h-5 text-[#165A20]" />
+                        <GiftCustomIcon className="w-5 h-5 text-[#165A20]" />
                       </div>
                     </div>
 
@@ -595,7 +598,7 @@ export default function ResortWebsiteSections({
                           key={h}
                           className="flex items-start gap-2.5 text-xs sm:text-sm text-[#0F3B1A]"
                         >
-                          <CheckCircle2 className="w-4 h-4 text-[#97A87A] shrink-0 mt-0.5" />
+                          <VerifiedCheckCustomIcon className="w-4 h-4 text-[#0F3B1A] shrink-0 mt-0.5" />
                           <span>{h}</span>
                         </li>
                       ))}
@@ -845,11 +848,11 @@ export default function ResortWebsiteSections({
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-3">
                     <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold clay-surface text-[#165A20]">
-                      <Sparkles className="w-3.5 h-3.5 text-[#FFA97B]" />
+                      <HeritageBloomIcon className="w-3.5 h-3.5 text-[#FFA97B]" />
                       {pkg.tag}
                     </span>
                     <div className="w-10 h-10 rounded-2xl clay-btn-soft flex items-center justify-center shrink-0">
-                      <Gift className="w-5 h-5 text-[#165A20]" />
+                      <GiftCustomIcon className="w-5 h-5 text-[#165A20]" />
                     </div>
                   </div>
 
@@ -869,7 +872,7 @@ export default function ResortWebsiteSections({
                         key={h}
                         className="flex items-start gap-2.5 text-xs sm:text-sm text-[#0F3B1A]"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-[#97A87A] shrink-0 mt-0.5" />
+                        <VerifiedCheckCustomIcon className="w-4 h-4 text-[#0F3B1A] shrink-0 mt-0.5" />
                         <span>{h}</span>
                       </li>
                     ))}

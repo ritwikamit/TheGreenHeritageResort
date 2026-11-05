@@ -94,63 +94,66 @@ export default function InstagramReelCard({
       ref={containerRef}
       onClick={handleCardClick}
       onMouseEnter={tryPlay}
-      className={`group relative overflow-hidden rounded-[26px] border-2 border-[#9FED72]/30 bg-[#0A1C0D] shadow-[8px_8px_20px_rgba(197,160,114,0.35),-6px_-6px_16px_rgba(255,255,255,0.9)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:border-[#E00000] cursor-pointer ${
-        isLandscape ? 'aspect-video w-full' : 'aspect-[9/16] w-full'
+      className={`group relative p-2 sm:p-2.5 rounded-[28px] bg-[#FFECCB] border border-white/85 shadow-[9px_9px_22px_rgba(197,160,114,0.40),-8px_-8px_20px_rgba(255,255,255,0.95)] hover:shadow-[12px_12px_28px_rgba(197,160,114,0.48),-9px_-9px_24px_rgba(255,255,255,1)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 cursor-pointer select-none ${
+        isLandscape ? 'aspect-[16/10.5] sm:aspect-video w-full' : 'aspect-[9/16] w-full'
       } ${className}`}
     >
-      <video
-        ref={videoRef}
-        src={reel.videoSrc}
-        poster={reel.poster}
-        muted={isMuted}
-        loop
-        playsInline
-        autoPlay
-        preload="metadata"
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
-        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 [backface-visibility:hidden]"
-        style={{ objectPosition: reel.objectPosition || '50% 30%' }}
-      />
+      {/* Neumorphic Inset Screen Frame */}
+      <div className="relative w-full h-full rounded-[20px] overflow-hidden bg-[#061508] shadow-[inset_3px_3px_8px_rgba(0,0,0,0.7),inset_-2px_-2px_6px_rgba(255,255,255,0.18)] border border-[#0F3B1A]/35">
+        <video
+          ref={videoRef}
+          src={reel.videoSrc}
+          poster={reel.poster}
+          muted={isMuted}
+          loop
+          playsInline
+          autoPlay
+          preload="metadata"
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 [backface-visibility:hidden]"
+          style={{ objectPosition: reel.objectPosition || '50% 30%' }}
+        />
 
-      {/* Subtle bottom contrast scrim strictly for small video details & mute button */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+        {/* Subtle bottom contrast scrim strictly for small video details & mute button */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
 
-      {/* Play/Pause state indicator on smartphone tap */}
-      {!isPlaying && (
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/35 backdrop-blur-[2px]">
-          <div className="w-14 h-14 rounded-full bg-white/20 border border-white/30 flex items-center justify-center text-white backdrop-blur-md shadow-lg">
-            <svg className="w-7 h-7 ml-1" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z" />
-            </svg>
+        {/* Play/Pause state indicator on smartphone tap */}
+        {!isPlaying && (
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/35 backdrop-blur-[2px]">
+            <div className="w-14 h-14 rounded-full bg-white/20 border border-white/30 flex items-center justify-center text-white backdrop-blur-md shadow-lg">
+              <svg className="w-7 h-7 ml-1" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Minimal footer: ONLY small details on left + Mute/Unmute button on right */}
-      <div className="absolute inset-x-4 bottom-3.5 z-20 flex items-end justify-between gap-2.5">
-        <div className="min-w-0 pointer-events-none">
-          <h4 className="font-serif text-[#FFECCB] text-sm sm:text-base font-semibold leading-snug truncate drop-shadow-sm">
-            {reel.title}
-          </h4>
-          <p className="text-white/85 text-[11px] sm:text-xs truncate">
-            {reel.subtitle}
-          </p>
-        </div>
+        {/* Minimal footer: details on left + Neumorphic Mute/Unmute button on right */}
+        <div className="absolute inset-x-3.5 bottom-3 z-20 flex items-end justify-between gap-2.5">
+          <div className="min-w-0 pointer-events-none">
+            <h4 className="font-serif text-[#FFECCB] text-xs sm:text-sm md:text-base font-semibold leading-snug truncate drop-shadow-sm">
+              {reel.title}
+            </h4>
+            <p className="text-white/85 text-[10px] sm:text-xs truncate">
+              {reel.subtitle}
+            </p>
+          </div>
 
-        <button
-          type="button"
-          onClick={toggleMute}
-          aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-          title={isMuted ? 'Unmute audio' : 'Mute audio'}
-          className="shrink-0 w-9 h-9 rounded-full clay-btn-coral flex items-center justify-center transition-transform hover:scale-105 cursor-pointer z-30"
-        >
-          {isMuted ? (
-            <VolumeMuteCustomIcon className="w-4 h-4" />
-          ) : (
-            <VolumeUnmuteCustomIcon className="w-4 h-4" />
-          )}
-        </button>
+          <button
+            type="button"
+            onClick={toggleMute}
+            aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+            title={isMuted ? 'Unmute audio' : 'Mute audio'}
+            className="shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#FFECCB] text-[#0F3B1A] border border-white/90 shadow-[3px_3px_8px_rgba(0,0,0,0.5),-2px_-2px_6px_rgba(255,255,255,0.7)] hover:bg-[#FFF5E3] hover:text-[#0A260E] hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer z-30"
+          >
+            {isMuted ? (
+              <VolumeMuteCustomIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            ) : (
+              <VolumeUnmuteCustomIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );

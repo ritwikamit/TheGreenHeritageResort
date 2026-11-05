@@ -301,13 +301,68 @@ export default function RootLayout({
               /* Neumorphic Active Debossed Pill */
               .clay-pill-active, .neu-pill-active {
                 background: #F7E3BD;
-                color: #E00000 !important;
+                color: #0F3B1A !important;
                 font-weight: 700;
-                border: 1px solid rgba(224, 0, 0, 0.25);
+                border: 1px solid rgba(15, 59, 26, 0.28);
                 box-shadow:
                   inset 4px 4px 8px rgba(197, 160, 114, 0.45),
                   inset -4px -4px 8px rgba(255, 255, 255, 0.95),
-                  0 1px 2px rgba(224, 0, 0, 0.12);
+                  0 1px 2px rgba(15, 59, 26, 0.10);
+              }
+
+              /* Neumorphic Header Specific Non-Red Styling */
+              .neu-header-pill-active {
+                background: #F4DEC0;
+                color: #0F3B1A !important;
+                font-weight: 700;
+                border: 1px solid rgba(15, 59, 26, 0.28);
+                box-shadow:
+                  inset 3px 3px 6px rgba(197, 160, 114, 0.50),
+                  inset -3px -3px 6px rgba(255, 255, 255, 0.95);
+              }
+              .neu-btn-header-call {
+                background: linear-gradient(145deg, #FFB48E, #F29562);
+                color: #0A2B09 !important;
+                border: 1px solid rgba(255, 255, 255, 0.85);
+                box-shadow:
+                  4px 4px 12px rgba(242, 149, 98, 0.38),
+                  -3px -3px 8px rgba(255, 255, 255, 0.90);
+                transition: transform 0.22s ease, box-shadow 0.22s ease;
+              }
+              .neu-btn-header-call:hover {
+                transform: translateY(-2px);
+                box-shadow:
+                  6px 6px 16px rgba(242, 149, 98, 0.48),
+                  -4px -4px 10px rgba(255, 255, 255, 0.98);
+              }
+              .neu-btn-header-call:active {
+                transform: translateY(1px);
+                box-shadow:
+                  inset 2px 2px 5px rgba(180, 90, 40, 0.45),
+                  inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+              }
+              .neu-btn-header-enquire {
+                background: linear-gradient(145deg, #0F3B1A, #185226);
+                color: #FFECCB !important;
+                border: 1px solid rgba(212, 175, 55, 0.45);
+                box-shadow:
+                  5px 5px 15px rgba(15, 59, 26, 0.35),
+                  -3px -3px 10px rgba(255, 255, 255, 0.90);
+                transition: transform 0.22s ease, box-shadow 0.22s ease;
+              }
+              .neu-btn-header-enquire:hover {
+                background: linear-gradient(145deg, #134B21, #1E6630);
+                color: #FFFFFF !important;
+                transform: translateY(-2px);
+                box-shadow:
+                  7px 7px 18px rgba(15, 59, 26, 0.45),
+                  -4px -4px 12px rgba(255, 255, 255, 0.98);
+              }
+              .neu-btn-header-enquire:active {
+                transform: translateY(1px);
+                box-shadow:
+                  inset 3px 3px 6px rgba(5, 25, 10, 0.65),
+                  inset -2px -2px 5px rgba(255, 255, 255, 0.25);
               }
 
               /* Neumorphic Peach Accent Pill / Badge (#FFA97B) */
